@@ -1,0 +1,2124 @@
+/* ========================================================
+   SMK Gema Cyber School - Official Stylesheet
+   Pixel-Perfect Implementation matching Mockup Prototype
+   Wide Panoramic Hero Design + Sticky Fixed Navbar
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --gema-primary: #0d6efd;
+    --gema-primary-dark: #0b5ed7;
+    --gema-navy: #0c1e33;
+    --gema-slate: #334155;
+    --gema-muted: #64748b;
+    --gema-light-gray: #f1f5f9;
+    --gema-border: #e2e8f0;
+    --gema-hero-bg: #f2f7fd;
+    --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--gema-slate);
+    background-color: #ffffff;
+    margin: 0;
+    padding-top: 82px; /* Offset for enlarged sticky/fixed navbar */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================================
+   Top Navigation Bar (Sticky / Fixed On Scroll - Enlarged)
+   ======================================================== */
+.school-navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1050;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #edf2f7;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 0.95rem 0; /* Enlarged navbar padding */
+    transition: all 0.25s ease;
+}
+
+.school-navbar.navbar-scrolled {
+    padding: 0.65rem 0;
+    box-shadow: 0 4px 20px rgba(13, 33, 55, 0.08);
+    background-color: rgba(255, 255, 255, 0.99);
+}
+
+.school-navbar .navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.school-navbar .brand-logo-img {
+    height: 48px; /* Enlarged brand logo */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: height 0.2s ease;
+}
+
+.school-navbar.navbar-scrolled .brand-logo-img {
+    height: 44px;
+}
+
+.school-navbar .nav-link {
+    font-size: 0.96rem; /* Slightly larger, clearer font */
+    font-weight: 600;
+    color: #334155;
+    padding: 0.65rem 1rem !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.school-navbar .nav-link:hover {
+    color: var(--gema-primary);
+}
+
+.school-navbar .nav-link.active {
+    color: var(--gema-primary) !important;
+    font-weight: 700;
+}
+
+.school-navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 1rem;
+    right: 1rem;
+    height: 3.5px;
+    background-color: var(--gema-primary);
+    border-radius: 4px;
+}
+
+.school-navbar .nav-chevron {
+    font-size: 0.74rem;
+    color: #64748b;
+    margin-left: 3px;
+}
+
+.school-navbar .btn-nav-search {
+    width: 44px; /* Enlarged search button */
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.school-navbar .btn-nav-search:hover {
+    border-color: var(--gema-primary);
+    color: var(--gema-primary);
+    background-color: #f8faff;
+}
+
+.school-navbar .btn-ppdb-nav {
+    background-color: var(--gema-primary);
+    color: #ffffff;
+    font-size: 0.95rem; /* Enlarged text */
+    font-weight: 600;
+    padding: 0.65rem 1.6rem; /* Enlarged button padding */
+    border-radius: 50rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(13, 110, 253, 0.3);
+    transition: all 0.2s ease;
+}
+
+.school-navbar .btn-ppdb-nav:hover {
+    background-color: var(--gema-primary-dark);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* ========================================================
+   Hero Section (Wide Panoramic - Memanjang ke Kanan)
+   ======================================================== */
+.hero-section {
+    background-color: var(--gema-hero-bg);
+    position: relative;
+    overflow: hidden;
+    padding-top: 1.5rem;
+    padding-bottom: 3.8rem;
+}
+
+.hero-label-top {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.65rem;
+}
+
+.hero-title {
+    font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--gema-navy);
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #475569;
+    max-width: 440px;
+    margin-bottom: 1.8rem;
+}
+
+.btn-hero-primary {
+    background-color: var(--gema-primary);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.65rem 1.45rem;
+    border-radius: 50rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+    background-color: var(--gema-primary-dark);
+    box-shadow: 0 8px 22px rgba(13, 110, 253, 0.4);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-hero-secondary {
+    background-color: #ffffff;
+    color: #1e293b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.62rem 1.4rem;
+    border-radius: 50rem;
+    border: 1.5px solid #cbd5e1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-hero-secondary:hover {
+    background-color: #f8faff;
+    border-color: #94a3b8;
+    color: var(--gema-primary);
+    transform: translateY(-1px);
+}
+
+/* Panoramic Wide Layout on Desktop */
+@media (min-width: 992px) {
+    .hero-section {
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 3.5rem;
+    }
+
+    .hero-panorama-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 58%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .hero-panorama-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left center;
+        display: block;
+        mask-image: linear-gradient(to right, transparent 0%, black 12%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%);
+    }
+
+    .hero-text-col {
+        z-index: 3;
+        position: relative;
+    }
+}
+
+/* ========================================================
+   Floating Stats Bar
+   ======================================================== */
+.stats-bar-wrapper {
+    margin-top: -36px;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.stats-card-main {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    padding: 14px 24px;
+}
+
+.stats-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.stat-icon-blue {
+    background-color: #0d6efd;
+}
+
+.stat-icon-green {
+    background-color: #059669;
+}
+
+.stat-icon-amber {
+    background-color: #f59e0b;
+}
+
+.stat-icon-purple {
+    background-color: #8b5cf6;
+}
+
+.stat-icon-rose {
+    background-color: #ef4444;
+}
+
+.stat-number {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--gema-navy);
+    line-height: 1.15;
+}
+
+.stat-label {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--gema-muted);
+}
+
+/* ========================================================
+   Program Keahlian (Pilihan Jurusan Unggulan)
+   ======================================================== */
+.jurusan-section {
+    padding: 1.5rem 0 4rem 0;
+    background-color: #ffffff;
+}
+
+.section-label-cyan {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #2563eb;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.section-heading {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--gema-navy);
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+}
+
+.section-description {
+    font-size: 0.86rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+.btn-all-jurusan {
+    background-color: #ffffff;
+    color: #1e293b;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 50rem;
+    padding: 0.45rem 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-all-jurusan:hover {
+    border-color: var(--gema-primary);
+    color: var(--gema-primary);
+    background-color: #f8faff;
+}
+
+/* Department Cards */
+.jurusan-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e9edf2;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+}
+
+.jurusan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+
+.jurusan-card-thumb {
+    position: relative;
+    height: 105px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0f172a;
+}
+
+.jurusan-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.jurusan-card:hover .jurusan-card-img {
+    transform: scale(1.05);
+}
+
+.jurusan-card-badge {
+    position: relative;
+    margin-top: -19px;
+    margin-left: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+}
+
+.badge-tjkt {
+    background-color: #0d6efd;
+}
+
+.badge-akl {
+    background-color: #059669;
+}
+
+.badge-mplb {
+    background-color: #ea580c;
+}
+
+.badge-logistik {
+    background-color: #8b5cf6;
+}
+
+.jurusan-card-body {
+    padding: 10px 14px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.jurusan-card-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--gema-navy);
+    line-height: 1.35;
+    margin-bottom: 6px;
+    min-height: 40px;
+}
+
+.jurusan-card-desc {
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    flex-grow: 1;
+}
+
+.jurusan-card-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gema-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+    transition: all 0.2s ease;
+}
+
+.jurusan-card-link:hover {
+    color: var(--gema-primary-dark);
+    gap: 7px;
+}
+
+/* ========================================================
+   Footer
+   ======================================================== */
+.school-footer {
+    background-color: #081525;
+    color: #cbd5e1;
+    padding: 3.5rem 0 1.5rem 0;
+    font-size: 0.88rem;
+}
+
+.school-footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.school-footer a:hover {
+    color: #ffffff;
+}
+
+.footer-heading {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .stats-bar-wrapper {
+        margin-top: -15px;
+    }
+}
+
+/* ========================================================
+   Halaman Profil Sekolah (Profile Page Styles - Elite Academic Theme)
+   ======================================================== */
+.profile-page-banner {
+    background: linear-gradient(135deg, #091726 0%, #0f2744 55%, #183a62 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0 3.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-page-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+}
+
+.profile-page-banner::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    right: 5%;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.18) 0%, rgba(13, 110, 253, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.profile-banner-badge-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 0.35rem 0.95rem;
+    border-radius: 50rem;
+    margin-bottom: 0.85rem;
+}
+
+.profile-banner-title {
+    font-size: clamp(2rem, 3.4vw, 2.75rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 0.65rem;
+}
+
+.profile-banner-desc {
+    font-size: 0.96rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    margin-bottom: 1.35rem;
+    max-width: 580px;
+}
+
+.profile-breadcrumb-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    padding: 6px 18px;
+    border-radius: 50rem;
+    font-size: 0.82rem;
+}
+
+.profile-breadcrumb-pill a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.profile-breadcrumb-pill a:hover {
+    color: #ffffff;
+}
+
+.profile-breadcrumb-pill .crumb-active {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Banner Right Highlights Cards (Glassmorphism Institutional Badges) */
+.banner-highlight-glass {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    transition: all 0.25s ease;
+    margin-bottom: 10px;
+}
+
+.banner-highlight-glass:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(-4px);
+}
+
+.banner-highlight-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+/* Profile Content Area */
+.profile-content-area {
+    background-color: #f8fafc;
+    padding: 2.8rem 0 4.5rem 0;
+}
+
+.profile-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e9edf2;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    padding: 1.85rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.25s ease;
+}
+
+.profile-card:hover {
+    border-color: #dbeafe;
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+}
+
+/* Left Sidebar Menu (Strictly 3 Clean Items) */
+.profile-sidebar-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e9edf2;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-heading-small {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #64748b;
+    text-transform: uppercase;
+    padding: 0.4rem 0.6rem 0.75rem 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 0.75rem;
+}
+
+.profile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+}
+
+.profile-nav-link .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-nav-link .nav-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #f1f5f9;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.profile-nav-link .nav-text-main {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.25;
+    display: block;
+}
+
+.profile-nav-link .nav-text-sub {
+    font-size: 0.72rem;
+    color: #64748b;
+    display: block;
+    margin-top: 2px;
+}
+
+.profile-nav-link .nav-arrow {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    transition: transform 0.2s ease;
+}
+
+.profile-nav-link:hover {
+    background-color: #f8faff;
+    border-color: #dbeafe;
+}
+
+.profile-nav-link:hover .nav-icon {
+    background-color: #eff6ff;
+    color: var(--gema-primary);
+}
+
+.profile-nav-link:hover .nav-text-main {
+    color: var(--gema-primary);
+}
+
+.profile-nav-link:hover .nav-arrow {
+    transform: translateX(3px);
+    color: var(--gema-primary);
+}
+
+.profile-nav-link.active {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.32);
+    border-color: transparent;
+}
+
+.profile-nav-link.active .nav-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.profile-nav-link.active .nav-text-main {
+    color: #ffffff !important;
+}
+
+.profile-nav-link.active .nav-text-sub {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.profile-nav-link.active .nav-arrow {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* Sidebar Info Card */
+.sidebar-help-card {
+    background: linear-gradient(135deg, #091726 0%, #112846 100%);
+    color: #ffffff;
+    border-radius: 18px;
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(9, 23, 38, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Executive Welcome Section (Sambutan Kepala Sekolah) */
+.executive-welcome-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e9edf2;
+    box-shadow: 0 6px 24px rgba(12, 30, 51, 0.05);
+    padding: 2rem 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.executive-welcome-card::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.executive-avatar-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #eff6ff;
+    box-shadow: 0 8px 22px rgba(13, 110, 253, 0.18);
+    display: block;
+    margin: 0 auto;
+}
+
+.executive-quote-text {
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.8;
+    font-style: italic;
+    position: relative;
+}
+
+/* Campus Facilities Cards */
+.facility-card-item {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e9edf2;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+.facility-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+    border-color: #bfdbfe;
+}
+
+.facility-card-thumb {
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.facility-card-body {
+    padding: 12px 14px;
+}
+
+/* Feature tags inside "Tentang" card */
+.about-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    background-color: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    padding: 10px 14px;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.about-feature-item:hover {
+    background-color: #ffffff;
+    border-color: #bfdbfe;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.06);
+    transform: translateY(-2px);
+}
+
+.about-feature-item i {
+    font-size: 1.15rem;
+}
+
+/* Core Values (Nilai-Nilai Utama) */
+.core-val-card {
+    padding: 1.35rem;
+    border-radius: 16px;
+    border: 1px solid #edf2f7;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.core-val-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+.core-val-blue {
+    background: linear-gradient(180deg, #f0f7fe 0%, #ffffff 100%);
+    border-top: 4px solid #0d6efd;
+}
+
+.core-val-green {
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+    border-top: 4px solid #059669;
+}
+
+.core-val-amber {
+    background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
+    border-top: 4px solid #f59e0b;
+}
+
+/* Visi & Misi Styling */
+.visi-quote-container {
+    background: linear-gradient(135deg, #091726 0%, #0f2744 100%);
+    color: #ffffff;
+    border-radius: 18px;
+    padding: 2rem 2.2rem;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(9, 23, 38, 0.16);
+    overflow: hidden;
+}
+
+.visi-quote-container::before {
+    content: "“";
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 8rem;
+    font-family: Georgia, serif;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.visi-quote-container .quote-text {
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.8;
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+/* Vision 3 Pillars */
+.vision-pillar-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1.2rem;
+    text-align: center;
+    height: 100%;
+    transition: all 0.25s ease;
+}
+
+.vision-pillar-item:hover {
+    transform: translateY(-3px);
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.vision-pillar-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+/* Misi Numbered Steps */
+.misi-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.misi-item-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 18px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+}
+
+.misi-item-card:hover {
+    background: #ffffff;
+    border-color: #dbeafe;
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.06);
+    transform: translateX(3px);
+}
+
+.misi-badge-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(13, 110, 253, 0.35);
+}
+
+.misi-content-text {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #334155;
+    margin: 0;
+}
+
+.misi-content-text strong {
+    color: var(--gema-navy);
+}
+
+/* ========================================================
+   Struktur Organisasi & Dewan Guru (Fail-Safe Hierarchy Tree & Directory)
+   ======================================================== */
+.org-chart-wrapper {
+    position: relative;
+    padding: 1.2rem 0;
+}
+
+.org-level-box {
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+/* Tier Header Badges */
+.tier-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    color: #0c1e33;
+    border: 1.5px solid #dce8f5;
+    box-shadow: 0 2px 8px rgba(12, 30, 51, 0.05);
+    padding: 6px 20px;
+    border-radius: 50rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Vertical Tier Stem Connectors */
+.tier-stem-line {
+    width: 2px;
+    height: 18px;
+    background-color: #93c5fd;
+    margin: 0 auto;
+}
+
+.tier-stem-arrow {
+    color: #0d6efd;
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-top: -4px;
+    margin-bottom: 4px;
+}
+
+/* Level 1: Yayasan Card */
+.org-card-yayasan {
+    display: inline-block;
+    background: #ffffff;
+    border: 1.5px solid #dce8f5;
+    border-radius: 14px;
+    padding: 10px 32px;
+    box-shadow: 0 4px 14px rgba(12, 30, 51, 0.05);
+    transition: all 0.2s ease;
+}
+
+.org-card-yayasan:hover {
+    box-shadow: 0 6px 18px rgba(12, 30, 51, 0.08);
+    border-color: #bfdbfe;
+}
+
+/* Level 2: Kepala Sekolah Card */
+.org-card-kepsek {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border: 2px solid #bfdbfe;
+    border-radius: 18px;
+    padding: 14px 28px;
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.1);
+    text-align: left;
+    max-width: 460px;
+    width: 100%;
+    transition: all 0.25s ease;
+}
+
+.org-card-kepsek:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(13, 110, 253, 0.16);
+    border-color: #93c5fd;
+}
+
+.org-kepsek-thumb {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0d6efd;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    flex-shrink: 0;
+}
+
+/* Dedicated Tree Branch Connector Bar Container (100% Clean & Separated) */
+.tree-branch-container {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin: 4px 0 0 0;
+}
+
+.tree-branch-stem-top {
+    width: 2px;
+    height: 14px;
+    background-color: #93c5fd;
+    margin: 0 auto;
+}
+
+.tree-branch-bar {
+    position: relative;
+    width: 75%;
+    height: 2px;
+    background-color: #93c5fd;
+    margin: 0 auto;
+}
+
+.tree-branch-drop {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 14px;
+    background-color: #93c5fd;
+}
+
+.tree-branch-drop.drop-1 { left: 0%; }
+.tree-branch-drop.drop-2 { left: 33.333%; }
+.tree-branch-drop.drop-3 { left: 66.666%; }
+.tree-branch-drop.drop-4 { left: 100%; }
+
+/* Professional Cards for Waka & Kaprog */
+.org-person-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.25rem 0.95rem 1.15rem 0.95rem;
+    text-align: center;
+    height: 100%;
+    min-height: 215px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.org-person-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+    border-color: #cbd5e1;
+}
+
+.org-person-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2.5px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.org-role-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 50rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.org-person-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 3px;
+}
+
+.org-person-subtitle {
+    font-size: 0.74rem;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.card-tupoksi-box {
+    background-color: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: #475569;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Role Theme Border Highlights */
+.border-theme-blue {
+    border-top: 4px solid #0d6efd;
+}
+
+.border-theme-green {
+    border-top: 4px solid #059669;
+}
+
+.border-theme-amber {
+    border-top: 4px solid #d97706;
+}
+
+.border-theme-purple {
+    border-top: 4px solid #8b5cf6;
+}
+
+.border-theme-orange {
+    border-top: 4px solid #ea580c;
+}
+
+/* Tab Navigation for Organization Chart & Teacher Directory */
+.structure-tab-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 22px;
+    border-radius: 50rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #64748b;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.structure-tab-btn:hover {
+    color: var(--gema-primary);
+    background-color: #f0f7fe;
+}
+
+.structure-tab-btn.active {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(13, 110, 253, 0.28);
+}
+
+/* Teacher Directory Cards */
+.teacher-grid-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem;
+    height: 100%;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.teacher-grid-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    border-color: #bfdbfe;
+}
+
+.teacher-avatar-thumb {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2.5px solid #eff6ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.teacher-filter-btn {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50rem;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #475569;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.teacher-filter-btn:hover, .teacher-filter-btn.active {
+    background-color: var(--gema-primary);
+    color: #ffffff;
+    border-color: var(--gema-primary);
+}
+
+/* Document Downloads List in Sidebar */
+.doc-download-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+}
+
+.doc-download-item:hover {
+    background-color: #ffffff;
+    border-color: #bfdbfe;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.06);
+    transform: translateX(2px);
+}
+
+.doc-download-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background-color: #eff6ff;
+    color: var(--gema-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.doc-download-item:hover .doc-download-btn {
+    background-color: var(--gema-primary);
+    color: #ffffff;
+}
+
+
+
+/* ========================================================
+   HOME PAGE EXPANDED SECTIONS
+   Professional Styling for SMK Gema Cyber School
+   ======================================================== */
+
+.home-section-padding {
+    padding: 5rem 0;
+}
+
+.home-section-bg-light {
+    background-color: #f8fafc;
+    border-top: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.section-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 5px 14px;
+    border-radius: 50rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-badge-primary {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #dbeafe;
+}
+
+.section-badge-success {
+    background-color: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+.section-badge-amber {
+    background-color: #fffbeb;
+    color: #d97706;
+    border: 1px solid #fde68a;
+}
+
+.section-badge-purple {
+    background-color: #f5f3ff;
+    color: #7c3aed;
+    border: 1px solid #ddd6fe;
+}
+
+.section-title-lg {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gema-navy);
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 680px;
+    margin-bottom: 0;
+}
+
+/* 1. Keunggulan / Why Choose Us */
+.feature-usp-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 1.85rem 1.65rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-usp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+    border-color: #93c5fd;
+}
+
+.feature-usp-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    transition: all 0.25s ease;
+}
+
+.feature-usp-card:hover .feature-usp-icon {
+    transform: scale(1.1);
+}
+
+.feature-usp-title {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--gema-navy);
+    margin-bottom: 0.65rem;
+}
+
+.feature-usp-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* 2. Sambutan Kepala Sekolah */
+.principal-welcome-wrapper {
+    background: linear-gradient(135deg, #091726 0%, #112845 55%, #183b65 100%);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(9, 23, 38, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.principal-welcome-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.3) 0%, rgba(13, 110, 253, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.principal-avatar-frame {
+    position: relative;
+    text-align: center;
+}
+
+.principal-photo-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 22px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    margin-bottom: 1rem;
+    background: #0f172a;
+}
+
+.principal-badge-tag {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    color: #93c5fd;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50rem;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.principal-quote-text {
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #e2e8f0;
+    font-style: italic;
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid #60a5fa;
+    margin-bottom: 1.5rem;
+}
+
+.principal-pill-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: #f1f5f9;
+}
+
+/* 3. Fasilitas Cards (Elite Academic Design) */
+.facility-home-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.facility-home-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 42px rgba(15, 23, 42, 0.11);
+    border-color: #cbd5e1;
+}
+
+/* Facility Card - Clean & Natural Design */
+.card-accent-blue,
+.card-accent-cyan,
+.card-accent-emerald,
+.card-accent-amber,
+.card-accent-purple,
+.card-accent-teal {
+    border-top: 1px solid #e2e8f0;
+}
+
+.facility-home-img-wrap {
+    height: 195px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #0b1526;
+}
+
+.facility-home-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 21, 38, 0.88) 0%, rgba(11, 21, 38, 0.25) 45%, rgba(11, 21, 38, 0) 100%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.facility-home-card:hover .facility-home-img-wrap::after {
+    opacity: 0.82;
+}
+
+.facility-home-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.facility-home-card:hover .facility-home-img {
+    transform: scale(1.08);
+}
+
+/* Category Badges floating on image (hidden to keep cards clean and authentic) */
+.facility-category-badge {
+    display: none;
+}
+
+.badge-cat-blue {
+    background: rgba(13, 110, 253, 0.9);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(13, 110, 253, 0.35);
+}
+
+.badge-cat-cyan {
+    background: rgba(2, 132, 199, 0.9);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.35);
+}
+
+.badge-cat-emerald {
+    background: rgba(5, 150, 105, 0.9);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(5, 150, 105, 0.35);
+}
+
+.badge-cat-amber {
+    background: rgba(217, 119, 6, 0.9);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(217, 119, 6, 0.35);
+}
+
+.badge-cat-purple {
+    background: rgba(124, 58, 237, 0.9);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(124, 58, 237, 0.35);
+}
+
+.badge-cat-teal {
+    background: rgba(13, 148, 136, 0.9);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(13, 148, 136, 0.35);
+}
+
+/* Floating Spec Tag on Bottom-Left of Image */
+.facility-home-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    z-index: 3;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.facility-home-body {
+    padding: 1.35rem 1.25rem 1.15rem 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.facility-icon-pill {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.facility-home-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--gema-navy);
+    line-height: 1.35;
+    margin-bottom: 0;
+}
+
+.facility-home-desc {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin: 0.65rem 0 0.9rem 0;
+    flex-grow: 1;
+}
+
+/* Spec Chips in Card */
+.facility-spec-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.facility-spec-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f8fafc;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.facility-home-card:hover .facility-spec-pill {
+    border-color: #cbd5e1;
+    background: #f1f5f9;
+}
+
+/* Card Bottom Footer Row */
+.facility-card-footer {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.85rem;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.facility-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--gema-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.facility-link:hover {
+    color: var(--gema-primary-dark);
+    gap: 8px;
+}
+
+.facility-status-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 4. PPDB Section */
+.ppdb-flow-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 1.75rem 1.4rem;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+    transition: all 0.25s ease;
+}
+
+.ppdb-flow-card:hover {
+    transform: translateY(-4px);
+    border-color: #93c5fd;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.ppdb-flow-step-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.28);
+}
+
+.ppdb-cta-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0d6efd 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    color: #ffffff;
+    box-shadow: 0 14px 32px rgba(13, 110, 253, 0.22);
+}
+
+/* 5. Ekstrakurikuler & Prestasi */
+.ekskul-mini-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    height: 100%;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ekskul-mini-card:hover {
+    transform: translateY(-3px);
+    border-color: #bfdbfe;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+.ekskul-icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.prestasi-item-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #f59e0b;
+    border-radius: 14px;
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    transition: all 0.25s ease;
+}
+
+.prestasi-item-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+/* 6. Berita & Agenda */
+.news-card-home {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s ease;
+}
+
+.news-card-home:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+    border-color: #cbd5e1;
+}
+
+.news-thumb-box {
+    height: 185px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #0f172a;
+}
+
+.news-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.news-card-home:hover .news-thumb-img {
+    transform: scale(1.05);
+}
+
+.news-body-box {
+    padding: 1.35rem 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-date-badge {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.news-title-link {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--gema-navy);
+    line-height: 1.4;
+    text-decoration: none;
+    margin-bottom: 0.65rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.2s ease;
+}
+
+.news-title-link:hover {
+    color: var(--gema-primary);
+}
+
+.news-excerpt {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 7. Galeri Showcase */
+.gallery-thumb-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 200px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    background-color: #0f172a;
+}
+
+.gallery-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-thumb-item:hover .gallery-thumb-img {
+    transform: scale(1.08);
+}
+
+.gallery-caption-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 14px 12px 14px;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 100%);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* 8. Mitra Industri Brand Grid */
+.partner-logo-pill {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.02);
+    transition: all 0.25s ease;
+}
+
+.partner-logo-pill:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.08);
+    transform: translateY(-3px);
+}
+
+.partner-name-text {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: -0.2px;
+}
+
+/* 9. FAQ Accordion */
+.faq-accordion-box .accordion-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px !important;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+}
+
+.faq-accordion-box .accordion-button {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--gema-navy);
+    padding: 1.1rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: none !important;
+}
+
+.faq-accordion-box .accordion-button:not(.collapsed) {
+    background-color: #f8faff;
+    color: var(--gema-primary);
+}
+
+.faq-accordion-box .accordion-body {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #475569;
+    padding: 1.1rem 1.25rem;
+    background-color: #ffffff;
+    border-top: 1px solid #edf2f7;
+}
+
+/* 10. Quick Contact Box */
+.quick-contact-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Tombol Lihat Selengkapnya Fasilitas */
+.btn-facility-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.9rem 2.4rem;
+    border-radius: 50rem;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.26);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-facility-more:hover {
+    background: linear-gradient(135deg, #0b5ed7 0%, #084298 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(13, 110, 253, 0.38);
+}
