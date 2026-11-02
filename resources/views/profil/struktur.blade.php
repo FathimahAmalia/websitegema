@@ -453,19 +453,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Download Notice Box -->
-        <div class="mt-4 p-3 rounded-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background-color: #eff6ff; border: 1.5px solid #bfdbfe;">
-            <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-info-circle-fill text-primary fs-5"></i>
-                <div class="small text-dark">
-                    Dokumen resmi SK Struktur Organisasi dan Pembagian Tugas Mengajar Dewan Guru lengkap dapat diunduh pada menu <strong>Unduh Dokumen</strong> di samping.
-                </div>
-            </div>
-            <a href="#dokumen-profil" class="btn btn-primary btn-sm rounded-pill px-3 py-1 fw-bold small">
-                <i class="bi bi-download me-1"></i>Unduh SK Struktur PDF
-            </a>
-        </div>
     </div>
 
     <!-- Script for Tab Switching & Teacher Directory Filter -->

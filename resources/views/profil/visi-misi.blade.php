@@ -29,32 +29,38 @@
         </div>
 
         <!-- 3 Vision Pillars -->
-        <div class="row g-2 mb-2">
+        <div class="row g-3 mb-2">
             <div class="col-md-4">
-                <div class="vision-pillar-item">
-                    <div class="vision-pillar-icon" style="background-color: #eff6ff; color: #0d6efd;">
+                <div class="vision-pillar-item d-flex align-items-center gap-3 p-3 bg-light rounded-3 border">
+                    <div class="pro-icon-box pro-icon-blue">
                         <i class="bi bi-cpu-fill"></i>
                     </div>
-                    <div class="fw-bold text-dark small">Unggul Teknologi</div>
-                    <div class="text-secondary" style="font-size: 0.72rem;">Penguasaan digital terdepan</div>
+                    <div>
+                        <div class="fw-bold text-dark small">Unggul Teknologi</div>
+                        <div class="text-secondary" style="font-size: 0.72rem;">Penguasaan digital terdepan</div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="vision-pillar-item">
-                    <div class="vision-pillar-icon" style="background-color: #f0fdf4; color: #059669;">
+                <div class="vision-pillar-item d-flex align-items-center gap-3 p-3 bg-light rounded-3 border">
+                    <div class="pro-icon-box pro-icon-emerald">
                         <i class="bi bi-shield-heart-fill"></i>
                     </div>
-                    <div class="fw-bold text-dark small">Karakter Mulia</div>
-                    <div class="text-secondary" style="font-size: 0.72rem;">Akhlak & integritas tinggi</div>
+                    <div>
+                        <div class="fw-bold text-dark small">Karakter Mulia</div>
+                        <div class="text-secondary" style="font-size: 0.72rem;">Akhlak & integritas tinggi</div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="vision-pillar-item">
-                    <div class="vision-pillar-icon" style="background-color: #fffbeb; color: #d97706;">
+                <div class="vision-pillar-item d-flex align-items-center gap-3 p-3 bg-light rounded-3 border">
+                    <div class="pro-icon-box pro-icon-amber">
                         <i class="bi bi-globe-americas"></i>
                     </div>
-                    <div class="fw-bold text-dark small">Daya Saing Global</div>
-                    <div class="text-secondary" style="font-size: 0.72rem;">Standar sertifikasi industri</div>
+                    <div>
+                        <div class="fw-bold text-dark small">Daya Saing Global</div>
+                        <div class="text-secondary" style="font-size: 0.72rem;">Standar sertifikasi industri</div>
+                    </div>
                 </div>
             </div>
         </div>

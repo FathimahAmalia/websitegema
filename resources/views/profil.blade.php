@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active" href="{{ url('/profil') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil <i class="bi bi-chevron-down nav-chevron"></i>
                         </a>
                         <ul class="dropdown-menu shadow-sm border-0 rounded-3">
@@ -67,23 +67,18 @@
                             <li><a class="dropdown-item py-2" href="{{ url('/') }}#jurusan-logistik">Logistik</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}#ppdb">PPDB</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kegiatan <i class="bi bi-chevron-down nav-chevron"></i>
                         </a>
                         <ul class="dropdown-menu shadow-sm border-0 rounded-3">
-                            <li><a class="dropdown-item py-2" href="#ekskul">Ekstrakurikuler</a></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('ekstrakurikuler.index') }}">Ekstrakurikuler</a></li>
                             <li><a class="dropdown-item py-2" href="#prestasi">Prestasi Siswa</a></li>
+                            <li><a class="dropdown-item py-2" href="#galeri">Galeri Kegiatan</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#berita">Berita</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#galeri">Galeri</a>
+                        <a class="nav-link" href="{{ route('berita.index') }}">Berita</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#kontak">Kontak</a>
@@ -579,7 +574,7 @@
     <footer class="school-footer" id="kontak">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-7">
                     <div class="mb-3">
                         <img src="{{ asset('images/school-logo-2x.png') }}" alt="SMK Gema Cyber School" style="height: 38px; filter: brightness(0) invert(1);" class="mb-2">
                     </div>
@@ -593,28 +588,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="footer-heading">Navigasi</h5>
-                    <ul class="list-unstyled small d-flex flex-column gap-2">
-                        <li><a href="{{ url('/') }}">Beranda</a></li>
-                        <li><a href="{{ url('/profil') }}">Profil Sekolah</a></li>
-                        <li><a href="{{ url('/') }}#jurusan">Program Keahlian</a></li>
-                        <li><a href="{{ url('/') }}#ppdb">Pendaftaran PPDB</a></li>
-                        <li><a href="#kontak">Hubungi Kami</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-heading">Program Keahlian</h5>
-                    <ul class="list-unstyled small d-flex flex-column gap-2">
-                        <li><a href="{{ url('/') }}#jurusan-tjkt">Teknik Jaringan Komputer (TJKT)</a></li>
-                        <li><a href="{{ url('/') }}#jurusan-akl">Akuntansi & Keuangan (AKL)</a></li>
-                        <li><a href="{{ url('/') }}#jurusan-mplb">Manajemen Perkantoran (MPLB)</a></li>
-                        <li><a href="{{ url('/') }}#jurusan-logistik">Logistik</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-5 offset-lg-1 col-md-5">
                     <h5 class="footer-heading">Kontak Sekolah</h5>
                     <ul class="list-unstyled small d-flex flex-column gap-2 text-secondary">
                         <li class="d-flex gap-2">

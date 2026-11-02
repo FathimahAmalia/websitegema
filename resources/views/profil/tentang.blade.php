@@ -48,51 +48,51 @@
         <div class="row g-3 mb-2">
             <div class="col-md-6">
                 <div class="about-feature-item">
-                    <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center p-3" style="width: 44px; height: 44px;">
-                        <i class="bi bi-book-fill fs-5"></i>
+                    <div class="pro-icon-box pro-icon-blue">
+                        <i class="bi bi-diagram-3-fill"></i>
                     </div>
                     <div>
-                        <div class="fw-bold text-dark small">Kurikulum Industri Terintegrasi</div>
-                        <div class="text-secondary" style="font-size: 0.76rem;">Diselaraskan langsung dengan kebutuhan DUDI terkini</div>
+                        <div class="fw-bold text-dark" style="font-size: 0.92rem;">Kurikulum Industri Terintegrasi</div>
+                        <div class="text-secondary small">Diselaraskan langsung dengan kebutuhan DUDI terkini</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="about-feature-item">
-                    <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center p-3" style="width: 44px; height: 44px;">
-                        <i class="bi bi-cpu-fill fs-5"></i>
+                    <div class="pro-icon-box pro-icon-emerald">
+                        <i class="bi bi-motherboard-fill"></i>
                     </div>
                     <div>
-                        <div class="fw-bold text-dark small">Praktik & Lab Berstandar Modern</div>
-                        <div class="text-secondary" style="font-size: 0.76rem;">Fasilitas praktikum lengkap untuk 4 konsentrasi keahlian</div>
+                        <div class="fw-bold text-dark" style="font-size: 0.92rem;">Praktik & Lab Berstandar Modern</div>
+                        <div class="text-secondary small">Fasilitas praktikum lengkap untuk 4 konsentrasi keahlian</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="about-feature-item">
-                    <div class="rounded-circle bg-warning-subtle text-warning d-flex align-items-center justify-content-center p-3" style="width: 44px; height: 44px;">
-                        <i class="bi bi-person-badge-fill fs-5"></i>
+                    <div class="pro-icon-box pro-icon-amber">
+                        <i class="bi bi-person-badge-fill"></i>
                     </div>
                     <div>
-                        <div class="fw-bold text-dark small">Guru Tersertifikasi Asesor BNSP</div>
-                        <div class="text-secondary" style="font-size: 0.76rem;">Didampingi praktisi ahli dari industri digital terkemuka</div>
+                        <div class="fw-bold text-dark" style="font-size: 0.92rem;">Guru Tersertifikasi Asesor BNSP</div>
+                        <div class="text-secondary small">Didampingi praktisi ahli dari industri digital terkemuka</div>
                     </div>
                 </div>
-            </div>
+            </div>  
 
             <div class="col-md-6">
                 <div class="about-feature-item">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center p-3" style="width: 44px; height: 44px; background-color: #f5f3ff; color: #8b5cf6;">
-                        <i class="bi bi-briefcase-fill fs-5"></i>
+                    <div class="pro-icon-box pro-icon-purple">
+                        <i class="bi bi-briefcase-fill"></i>
                     </div>
                     <div>
-                        <div class="fw-bold text-dark small">Penyaluran Magang & Bursa Kerja</div>
-                        <div class="text-secondary" style="font-size: 0.76rem;">Kemitraan strategis dengan puluhan perusahaan terkemuka</div>
+                        <div class="fw-bold text-dark" style="font-size: 0.92rem;">Penyaluran Magang & Bursa Kerja</div>
+                        <div class="text-secondary small">Kemitraan strategis dengan puluhan perusahaan terkemuka</div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 
@@ -101,8 +101,8 @@
          ========================================== -->
     <div class="profile-card mb-0">
         <div class="d-flex align-items-center gap-2 mb-3">
-            <div class="stat-icon-box stat-icon-amber" style="width: 38px; height: 38px; font-size: 1.1rem; border-radius: 10px;">
-                <i class="bi bi-stars"></i>
+            <div class="pro-icon-box pro-icon-amber" style="width: 40px; height: 40px; font-size: 1.15rem; border-radius: 10px;">
+                <i class="bi bi-shield-shaded"></i>
             </div>
             <div>
                 <h5 class="fw-bold text-dark m-0" style="font-size: 1.2rem;">Nilai-Nilai Utama (Core Values)</h5>
@@ -114,10 +114,13 @@
             <!-- 1. Berkarakter -->
             <div class="col-md-4">
                 <div class="core-val-card core-val-blue">
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 28px; height: 28px; font-size: 0.8rem;">1</div>
-                        <h6 class="fw-bold text-dark m-0 fs-6">Berkarakter</h6>
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="pro-icon-box pro-icon-blue">
+                            <i class="bi bi-shield-fill-check"></i>
+                        </div>
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1 small fw-bold">Pilar 01</span>
                     </div>
+                    <h6 class="fw-bold text-dark mt-3 mb-2" style="font-size: 1.05rem;">Berkarakter</h6>
                     <p class="text-secondary m-0" style="line-height: 1.6; font-size: 0.85rem;">
                         Menjunjung tinggi budi pekerti, integritas moral, kedisiplinan kerja, sopan santun, serta etika profesional di setiap langkah kehidupan.
                     </p>
@@ -127,10 +130,13 @@
             <!-- 2. Berkompetensi -->
             <div class="col-md-4">
                 <div class="core-val-card core-val-green">
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center fw-bold" style="width: 28px; height: 28px; font-size: 0.8rem;">2</div>
-                        <h6 class="fw-bold text-dark m-0 fs-6">Berkompetensi</h6>
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="pro-icon-box pro-icon-emerald">
+                            <i class="bi bi-patch-check-fill"></i>
+                        </div>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 small fw-bold">Pilar 02</span>
                     </div>
+                    <h6 class="fw-bold text-dark mt-3 mb-2" style="font-size: 1.05rem;">Berkompetensi</h6>
                     <p class="text-secondary m-0" style="line-height: 1.6; font-size: 0.85rem;">
                         Menguasai keterampilan teknis mutakhir yang diakui melalui sertifikasi profesi nasional BNSP serta lisensi industri berstandar global.
                     </p>
@@ -140,10 +146,13 @@
             <!-- 3. Berdaya Saing -->
             <div class="col-md-4">
                 <div class="core-val-card core-val-amber">
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center fw-bold" style="width: 28px; height: 28px; font-size: 0.8rem;">3</div>
-                        <h6 class="fw-bold text-dark m-0 fs-6">Berdaya Saing</h6>
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="pro-icon-box pro-icon-amber">
+                            <i class="bi bi-rocket-takeoff-fill"></i>
+                        </div>
+                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle rounded-pill px-3 py-1 small fw-bold">Pilar 03</span>
                     </div>
+                    <h6 class="fw-bold text-dark mt-3 mb-2" style="font-size: 1.05rem;">Berdaya Saing</h6>
                     <p class="text-secondary m-0" style="line-height: 1.6; font-size: 0.85rem;">
                         Memiliki daya juang tinggi, adaptif terhadap inovasi kecerdasan buatan, kreatif dalam pemecahan masalah, dan berjiwa wirausaha mandiri.
                     </p>

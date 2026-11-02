@@ -7,10 +7,10 @@
     
     <title>SMK Gema Cyber School - Berkarakter, Berkompetensi, Berdaya Saing</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,118 +20,212 @@
     <!-- Custom School Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/school-style.css') }}">
 </head>
-<body>
+<body class="home-page">
 
     <!-- ==========================================
-         TOP NAVBAR (STICKY / FIXED ON SCROLL)
+         INSTITUTIONAL TOP BAR & NAVBAR HEADER
          ========================================== -->
-    <nav class="navbar navbar-expand-lg school-navbar fixed-top">
-        <div class="container">
-            <!-- Brand Logo -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('images/school-logo-2x.png') }}" alt="SMK Gema Cyber School" class="brand-logo-img">
-            </a>
-
-            <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGema" aria-controls="navbarGema" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="navbarGema">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Beranda</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profil <i class="bi bi-chevron-down nav-chevron"></i>
-                        </a>
-                        <ul class="dropdown-menu shadow-sm border-0 rounded-3">
-                            <li><a class="dropdown-item py-2" href="{{ route('profil.tentang') }}"><i class="bi bi-building me-2 text-primary"></i>Profil Sekolah</a></li>
-                            <li><a class="dropdown-item py-2" href="{{ route('profil.visi-misi') }}"><i class="bi bi-bullseye me-2 text-danger"></i>Visi & Misi</a></li>
-                            <li><a class="dropdown-item py-2" href="{{ route('profil.struktur') }}"><i class="bi bi-diagram-3 me-2 text-success"></i>Struktur Organisasi</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Jurusan <i class="bi bi-chevron-down nav-chevron"></i>
-                        </a>
-                        <ul class="dropdown-menu shadow-sm border-0 rounded-3">
-                            <li><a class="dropdown-item py-2" href="#jurusan-tjkt">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</a></li>
-                            <li><a class="dropdown-item py-2" href="#jurusan-akl">Akuntansi & Keuangan Lembaga (AKL)</a></li>
-                            <li><a class="dropdown-item py-2" href="#jurusan-mplb">Manajemen Perkantoran & Layanan Bisnis (MPLB)</a></li>
-                            <li><a class="dropdown-item py-2" href="#jurusan-logistik">Logistik</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ppdb">PPDB</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Kegiatan <i class="bi bi-chevron-down nav-chevron"></i>
-                        </a>
-                        <ul class="dropdown-menu shadow-sm border-0 rounded-3">
-                            <li><a class="dropdown-item py-2" href="#ekskul">Ekstrakurikuler</a></li>
-                            <li><a class="dropdown-item py-2" href="#prestasi">Prestasi Siswa</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#berita">Berita</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#galeri">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
-                    </li>
-                </ul>
-
-                <!-- Right Actions -->
+    <header class="school-header fixed-top">
+        <!-- Top Institutional Information Bar -->
+        <div class="school-topbar d-none d-lg-block">
+            <div class="container d-flex justify-content-between align-items-center">
+                <!-- Left: School Identity & Accreditation -->
                 <div class="d-flex align-items-center gap-3">
-                    <button type="button" class="btn-nav-search" data-bs-toggle="modal" data-bs-target="#searchModal" title="Pencarian">
-                        <i class="bi bi-search"></i>
-                    </button>
-                    <a href="#ppdb" class="btn-ppdb-nav">
-                        <i class="bi bi-mortarboard-fill"></i>
+                    <span class="topbar-item">
+                        <i class="bi bi-geo-alt-fill text-white-50 me-1"></i>
+                        <span>SMK Pusat Keunggulan</span>
+                    </span>
+                    <span class="topbar-item">
+                        <i class="bi bi-star-fill text-warning me-1"></i>
+                        <span>Terakreditasi A (Unggul) BAN-S/M</span>
+                    </span>
+                </div>
+
+                <!-- Right: Quick Contact & Office Hours -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="tel:02188997766" class="topbar-link">
+                        <i class="bi bi-telephone-fill me-1 text-white-50"></i> (021) 8899-7766
+                    </a>
+                    <a href="mailto:info@smk.gemacyber.sch.id" class="topbar-link">
+                        <i class="bi bi-envelope-fill me-1 text-white-50"></i> info@smk.gemacyber.sch.id
+                    </a>
+                    <span class="topbar-item">
+                        <i class="bi bi-clock-fill me-1 text-white-50"></i> 07.30 - 15.30 WIB
+                    </span>
+                    <a href="#ppdb" class="btn-topbar-green ms-1">
+                        <i class="bi bi-mortarboard-fill me-1"></i>
                         <span>PPDB Online</span>
+                        <i class="bi bi-chevron-right ms-1" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-light py-1 px-2 ms-2 small d-inline-flex align-items-center gap-1" title="Akses Administrator" style="font-size: 0.75rem; border-color: rgba(255,255,255,0.25);">
+                        <i class="bi bi-shield-lock-fill text-warning"></i>
+                        <span>Admin</span>
                     </a>
                 </div>
             </div>
         </div>
-    </nav>
+
+        <!-- Sticky Navigation Bar -->
+        <nav class="navbar navbar-expand-lg school-navbar">
+            <div class="container">
+                <!-- Brand Logo -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('images/school-logo-2x.png') }}" alt="SMK Gema Cyber School" class="brand-logo-img">
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGema" aria-controls="navbarGema" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarGema">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profil <i class="bi bi-chevron-down nav-chevron"></i>
+                            </a>
+                            <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+                                <li><a class="dropdown-item py-2" href="{{ route('profil.tentang') }}"><i class="bi bi-building me-2 text-primary"></i>Profil Sekolah</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('profil.visi-misi') }}"><i class="bi bi-bullseye me-2 text-danger"></i>Visi & Misi</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('profil.struktur') }}"><i class="bi bi-diagram-3 me-2 text-success"></i>Struktur Organisasi</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('profil.fasilitas') }}"><i class="bi bi-door-open me-2 text-info"></i>Fasilitas Sekolah</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jurusan <i class="bi bi-chevron-down nav-chevron"></i>
+                            </a>
+                            <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+                                <li><a class="dropdown-item py-2" href="{{ route('jurusan.show', 'tjkt') }}">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('jurusan.show', 'akl') }}">Akuntansi & Keuangan Lembaga (AKL)</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('jurusan.show', 'mplb') }}">Manajemen Perkantoran & Layanan Bisnis (MPLB)</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('jurusan.show', 'logistik') }}">Logistik</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kegiatan <i class="bi bi-chevron-down nav-chevron"></i>
+                            </a>
+                            <ul class="dropdown-menu shadow-sm border-0 rounded-3">
+                                <li><a class="dropdown-item py-2" href="{{ route('ekstrakurikuler.index') }}"><i class="bi bi-stars me-2 text-warning"></i>Ekstrakurikuler</a></li>
+                                <li><a class="dropdown-item py-2" href="{{ route('prestasi.index') }}"><i class="bi bi-trophy me-2 text-primary"></i>Prestasi Siswa</a></li>
+                                <li><a class="dropdown-item py-2" href="#galeri"><i class="bi bi-images me-2 text-success"></i>Galeri Kegiatan</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('berita.index') }}">Berita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#kontak">Kontak</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Actions -->
+                    <div class="d-flex align-items-center gap-3">
+                        <button type="button" class="btn-nav-search" data-bs-toggle="modal" data-bs-target="#searchModal" title="Pencarian">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <a href="#ppdb" class="btn-ppdb-nav">
+                            <i class="bi bi-mortarboard-fill"></i>
+                            <span>PPDB Online</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- ==========================================
-         HERO SECTION (WIDE PANORAMIC - MEMANJANG KE KANAN)
+         HERO SECTION (WIDE PANORAMIC - MOCKUP STYLE)
          ========================================== -->
     <header class="hero-section">
         <!-- Wide Panoramic Image stretching seamlessly to the right screen edge -->
-        <div class="hero-panorama-bg d-none d-lg-flex">
+        <div class="hero-panorama-bg d-none d-lg-flex position-absolute">
             <img src="{{ asset('images/hero-panorama-wide.png') }}" alt="Siswa SMK Gema Cyber School" class="hero-panorama-img">
+
+            <!-- Cursive handwriting quote in bottom right -->
+            <div class="hero-cursive-quote d-none d-xl-block">
+                <span class="cursive-l1">Bersama</span>
+                <span class="cursive-l2">Menuju Masa Depan</span>
+                <span class="cursive-l3">yang Lebih Baik</span>
+            </div>
         </div>
 
         <div class="container position-relative z-2">
             <div class="row align-items-center">
                 <!-- Left Content Column -->
-                <div class="col-lg-5 col-xl-5 hero-text-col py-4 py-lg-5">
-                    <span class="hero-label-top">SELAMAT DATANG DI</span>
+                <div class="col-lg-6 col-xl-6 hero-text-col py-4 py-lg-5">
+                    <!-- Top Chip Badge -->
+                    <div class="mb-3">
+                        <span class="hero-chip-badge">SMK Gema Cyber School</span>
+                    </div>
+
+                    <!-- Main Headline -->
                     <h1 class="hero-title">
-                        SMK Gema<br>
-                        Cyber School
+                        Selamat Datang di<br>
+                        <span class="text-hero-blue">SMK Gema Cyber School</span>
                     </h1>
+
+                    <!-- Subtitle -->
                     <p class="hero-description">
-                        Membangun generasi unggul dan siap kerja di era digital dengan pendidikan vokasi berkualitas, berkarakter, dan berorientasi masa depan.
+                        Membentuk generasi vokasi yang unggul, adaptif terhadap perkembangan teknologi digital, dan berkarakter mulia untuk siap bersaing di dunia industri modern.
                     </p>
-                    <div class="d-flex flex-wrap align-items-center gap-3">
-                        <a href="#ppdb" class="btn btn-hero-primary">
-                            <i class="bi bi-mortarboard-fill"></i>
-                            <span>Daftar PPDB Sekarang</span>
-                            <i class="bi bi-chevron-right ms-1" style="font-size: 0.8rem;"></i>
+
+                    <!-- CTA Buttons -->
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <a href="#jurusan" class="btn btn-hero-explore">
+                            <i class="bi bi-mortarboard-fill me-2"></i>
+                            <span>Jelajahi Jurusan</span>
+                            <i class="bi bi-chevron-right ms-2" style="font-size: 0.8rem;"></i>
                         </a>
-                        <button type="button" class="btn btn-hero-secondary" data-bs-toggle="modal" data-bs-target="#videoProfileModal">
-                            <i class="bi bi-play-circle" style="font-size: 1.15rem;"></i>
-                            <span>Lihat Video Profil</span>
+                        <button type="button" class="btn btn-hero-profile" data-bs-toggle="modal" data-bs-target="#videoProfileModal">
+                            <i class="bi bi-play-circle me-2"></i>
+                            <span>Profil Sekolah</span>
                         </button>
+                    </div>
+
+                    <!-- 4 Micro Feature Quick Cards -->
+                    <div class="hero-feature-row">
+                        <div class="hero-feature-mini-card">
+                            <div class="mini-icon-box">
+                                <i class="bi bi-journal-bookmark-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="mini-title">Kurikulum Merdeka</div>
+                                <div class="mini-desc">Fleksibel & Relevan</div>
+                            </div>
+                        </div>
+                        <div class="hero-feature-mini-card">
+                            <div class="mini-icon-box">
+                                <i class="bi bi-buildings-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="mini-title">Teaching Factory</div>
+                                <div class="mini-desc">Belajar dari Dunia Industri</div>
+                            </div>
+                        </div>
+                        <div class="hero-feature-mini-card">
+                            <div class="mini-icon-box">
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="mini-title">Ekstrakurikuler Lengkap</div>
+                                <div class="mini-desc">Bakat & Minat Tersalurkan</div>
+                            </div>
+                        </div>
+                        <div class="hero-feature-mini-card">
+                            <div class="mini-icon-box">
+                                <i class="bi bi-display-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="mini-title">Fasilitas Modern</div>
+                                <div class="mini-desc">Mendukung Pembelajaran</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -144,266 +238,65 @@
     </header>
 
     <!-- ==========================================
-         FLOATING STATS / HIGHLIGHTS BAR
+         FLOATING STATS / HIGHLIGHTS BAR (4 METRICS MOCKUP)
          ========================================== -->
     <section class="stats-bar-wrapper">
         <div class="container">
             <div class="stats-card-main">
-                <div class="row g-2 align-items-center justify-content-between">
+                <div class="row g-3 align-items-center">
                     
                     <!-- Stat 1: 500+ Siswa Aktif -->
-                    <div class="col-md-auto col-6">
-                        <div class="stats-item">
-                            <div class="stat-icon-box stat-icon-blue">
+                    <div class="col-lg-3 col-6 stat-col-divider">
+                        <div class="stats-item d-flex align-items-center gap-3">
+                            <div class="stat-icon-box-mockup">
                                 <i class="bi bi-people-fill"></i>
                             </div>
                             <div>
-                                <div class="stat-number">500+</div>
-                                <div class="stat-label">Siswa Aktif</div>
+                                <div class="stat-number stat-number-mockup" data-count="500" data-suffix="+">500+</div>
+                                <div class="stat-label-mockup">Siswa Aktif</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Stat 2: 4 Program Keahlian -->
-                    <div class="col-md-auto col-6">
-                        <div class="stats-item">
-                            <div class="stat-icon-box stat-icon-green">
-                                <i class="bi bi-mortarboard-fill"></i>
+                    <div class="col-lg-3 col-6 stat-col-divider">
+                        <div class="stats-item d-flex align-items-center gap-3">
+                            <div class="stat-icon-box-mockup">
+                                <i class="bi bi-book-half"></i>
                             </div>
                             <div>
-                                <div class="stat-number">4</div>
-                                <div class="stat-label">Program Keahlian</div>
+                                <div class="stat-number stat-number-mockup" data-count="4">4</div>
+                                <div class="stat-label-mockup">Program Keahlian</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Stat 3: 30+ Guru Profesional -->
-                    <div class="col-md-auto col-6">
-                        <div class="stats-item">
-                            <div class="stat-icon-box stat-icon-amber">
-                                <i class="bi bi-person-fill"></i>
+                    <div class="col-lg-3 col-6 stat-col-divider">
+                        <div class="stats-item d-flex align-items-center gap-3">
+                            <div class="stat-icon-box-mockup">
+                                <i class="bi bi-award-fill"></i>
                             </div>
                             <div>
-                                <div class="stat-number">30+</div>
-                                <div class="stat-label">Guru Profesional</div>
+                                <div class="stat-number stat-number-mockup" data-count="30" data-suffix="+">30+</div>
+                                <div class="stat-label-mockup">Guru Tersertifikasi</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Stat 4: Fasilitas Lengkap & Modern -->
-                    <div class="col-md-auto col-6">
-                        <div class="stats-item">
-                            <div class="stat-icon-box stat-icon-purple">
-                                <i class="bi bi-buildings-fill"></i>
-                            </div>
-                            <div>
-                                <div class="stat-number" style="font-size: 1.05rem;">Fasilitas</div>
-                                <div class="stat-label">Lengkap & Modern</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stat 5: Siap Kerja & Berwirausaha -->
-                    <div class="col-md-auto col-12">
-                        <div class="stats-item">
-                            <div class="stat-icon-box stat-icon-rose">
-                                <i class="bi bi-briefcase-fill"></i>
+                    <!-- Stat 4: 88.4% Serapan Kerja BKK -->
+                    <div class="col-lg-3 col-6">
+                        <div class="stats-item d-flex align-items-center gap-3">
+                            <div class="stat-icon-box-mockup">
+                                <i class="bi bi-shield-check"></i>
                             </div>
                             <div>
-                                <div class="stat-number" style="font-size: 1.05rem;">Siap Kerja</div>
-                                <div class="stat-label">& Berwirausaha</div>
+                                <div class="stat-number stat-number-mockup">88.4%</div>
+                                <div class="stat-label-mockup">Serapan Kerja BKK</div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         PROGRAM KEAHLIAN / PILIHAN JURUSAN UNGGULAN
-         ========================================== -->
-    <section class="jurusan-section" id="jurusan">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="row align-items-end mb-4 g-2">
-                <div class="col-md-8">
-                    <span class="section-label-cyan">PROGRAM KEAHLIAN</span>
-                    <h2 class="section-heading">Pilihan Jurusan Unggulan</h2>
-                    <p class="section-description">Program keahlian yang disesuaikan dengan kebutuhan dunia kerja dan perkembangan teknologi.</p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <a href="#semua-jurusan" class="btn-all-jurusan">
-                        <span>Lihat Semua Jurusan</span>
-                        <i class="bi bi-chevron-right" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 4 Jurusan Cards -->
-            <div class="row g-4">
-                
-                <!-- Card 1: TJKT / TKJ -->
-                <div class="col-lg-3 col-md-6" id="jurusan-tjkt">
-                    <div class="jurusan-card">
-                        <div class="jurusan-card-thumb">
-                            <img src="{{ asset('images/jurusan-tjkt-siswa.png') }}" alt="Teknik Jaringan Komputer dan Telekomunikasi (TKJ/TJKT)" class="jurusan-card-img">
-                        </div>
-                        <div class="jurusan-card-badge badge-tjkt">
-                            <i class="bi bi-hdd-network-fill"></i>
-                        </div>
-                        <div class="jurusan-card-body">
-                            <h3 class="jurusan-card-title">Teknik Jaringan Komputer & Telekomunikasi (TJKT / TKJ)</h3>
-                            <p class="jurusan-card-desc">
-                                Mempelajari perakitan komputer, jaringan komputer, telekomunikasi, keamanan sistem, serta teknologi cloud.
-                            </p>
-                            <a href="#" class="jurusan-card-link">
-                                <span>Lihat Detail</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: AKL -->
-                <div class="col-lg-3 col-md-6" id="jurusan-akl">
-                    <div class="jurusan-card">
-                        <div class="jurusan-card-thumb">
-                            <img src="{{ asset('images/card-akl-2x.png') }}" alt="Akuntansi dan Keuangan Lembaga" class="jurusan-card-img">
-                        </div>
-                        <div class="jurusan-card-badge badge-akl">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                        <div class="jurusan-card-body">
-                            <h3 class="jurusan-card-title">Akuntansi dan Keuangan Lembaga (AKL)</h3>
-                            <p class="jurusan-card-desc">
-                                Mempelajari akuntansi, perpajakan, keuangan, dan penggunaan aplikasi akuntansi modern.
-                            </p>
-                            <a href="#" class="jurusan-card-link">
-                                <span>Lihat Detail</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: MPLB -->
-                <div class="col-lg-3 col-md-6" id="jurusan-mplb">
-                    <div class="jurusan-card">
-                        <div class="jurusan-card-thumb">
-                            <img src="{{ asset('images/card-mplb-2x.png') }}" alt="Manajemen Perkantoran dan Layanan Bisnis" class="jurusan-card-img">
-                        </div>
-                        <div class="jurusan-card-badge badge-mplb">
-                            <i class="bi bi-briefcase-fill"></i>
-                        </div>
-                        <div class="jurusan-card-body">
-                            <h3 class="jurusan-card-title">Manajemen Perkantoran dan Layanan Bisnis (MPLB)</h3>
-                            <p class="jurusan-card-desc">
-                                Mempelajari administrasi perkantoran, pengelolaan dokumen, komunikasi bisnis, dan layanan pelanggan.
-                            </p>
-                            <a href="#" class="jurusan-card-link">
-                                <span>Lihat Detail</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: Logistik -->
-                <div class="col-lg-3 col-md-6" id="jurusan-logistik">
-                    <div class="jurusan-card">
-                        <div class="jurusan-card-thumb">
-                            <img src="{{ asset('images/card-logistik-2x.png') }}" alt="Logistik" class="jurusan-card-img">
-                        </div>
-                        <div class="jurusan-card-badge badge-logistik">
-                            <i class="bi bi-truck"></i>
-                        </div>
-                        <div class="jurusan-card-body">
-                            <h3 class="jurusan-card-title">Logistik</h3>
-                            <p class="jurusan-card-desc">
-                                Mempelajari manajemen logistik, rantai pasok, pergudangan, dan distribusi barang.
-                            </p>
-                            <a href="#" class="jurusan-card-link">
-                                <span>Lihat Detail</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 1: KEUNGGULAN SEKOLAH (WHY CHOOSE US)
-         ========================================== -->
-    <section class="home-section-padding home-section-bg-light" id="keunggulan">
-        <div class="container">
-            <!-- Section Header -->
-            <div class="text-center mb-5">
-                <span class="section-badge-pill section-badge-primary">
-                    <i class="bi bi-star-fill text-primary"></i> KEUNGGULAN SEKOLAH
-                </span>
-                <h2 class="section-title-lg">Mengapa Memilih SMK Gema Cyber School?</h2>
-                <p class="section-subtitle-text mx-auto">
-                    Pendidikan vokasi masa depan yang mengintegrasikan kurikulum industri modern, sertifikasi keahlian berstandar nasional dan global, serta pembinaan akhlak berkarakter mulia.
-                </p>
-            </div>
-
-            <!-- 4 Keunggulan Cards -->
-            <div class="row g-4">
-                <!-- Keunggulan 1: Kurikulum Industri -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-usp-card">
-                        <div class="feature-usp-icon" style="background-color: #eff6ff; color: #2563eb;">
-                            <i class="bi bi-diagram-3-fill"></i>
-                        </div>
-                        <h3 class="feature-usp-title">Link & Match Industri</h3>
-                        <p class="feature-usp-desc">
-                            Kurikulum pembelajaran diselaraskan langsung dengan kebutuhan industri 4.0 dan mitra teknologi, memastikan kompetensi siswa selalu relevan dengan dunia kerja.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Keunggulan 2: Sertifikasi BNSP & Global -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-usp-card">
-                        <div class="feature-usp-icon" style="background-color: #ecfdf5; color: #059669;">
-                            <i class="bi bi-patch-check-fill"></i>
-                        </div>
-                        <h3 class="feature-usp-title">Sertifikasi Resmi BNSP</h3>
-                        <p class="feature-usp-desc">
-                            Lulusan dibekali sertifikasi profesi resmi BNSP dan lisensi vendor internasional (Cisco Networking Academy, MikroTik MTCNA, dan Accurate).
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Keunggulan 3: Penyaluran Kerja BKK -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-usp-card">
-                        <div class="feature-usp-icon" style="background-color: #fffbeb; color: #d97706;">
-                            <i class="bi bi-briefcase-fill"></i>
-                        </div>
-                        <h3 class="feature-usp-title">Serapan Kerja BKK 88%+</h3>
-                        <p class="feature-usp-desc">
-                            Bursa Kerja Khusus (BKK) aktif memfasilitasi program magang industri (PKL) dan rekrutmen kerja langsung ke puluhan jejaring perusahaan rekanan ternama.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Keunggulan 4: Teaching Factory -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-usp-card">
-                        <div class="feature-usp-icon" style="background-color: #f5f3ff; color: #7c3aed;">
-                            <i class="bi bi-cpu-fill"></i>
-                        </div>
-                        <h3 class="feature-usp-title">Teaching Factory Modern</h3>
-                        <p class="feature-usp-desc">
-                            Metode pembelajaran berbasis produksi nyata dengan laboratorium komputer canggih, simulasi alur kantor modern, dan praktik pergudangan terstandar.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -414,33 +307,81 @@
          ========================================== -->
     <section class="home-section-padding">
         <div class="container">
-            <div class="principal-welcome-wrapper">
-                <div class="row align-items-center g-4">
+            <div class="principal-welcome-wrapper position-relative overflow-hidden">
+                <!-- Watermark Quotation in Top Right -->
+                <div class="principal-giant-quote">”</div>
+
+                <!-- Watermark Building on Bottom Right -->
+                <img src="{{ asset('images/profile-about-building-2x.png') }}" alt="" class="principal-building-watermark" aria-hidden="true">
+
+                <!-- Dot Matrix Grid on Bottom Left -->
+                <div class="principal-dot-matrix" aria-hidden="true"></div>
+
+                <div class="row align-items-center g-4 position-relative z-1">
                     <!-- Left: Foto & Identitas Kepala Sekolah -->
-                    <div class="col-lg-4 text-center">
-                        <div class="principal-avatar-frame">
-                            <img src="{{ asset('images/profile-kepsek-2x.png') }}" alt="Drs. Ahmad Rudianto, M.Pd" class="principal-photo-card">
-                            <div>
-                                <span class="principal-badge-tag mb-1">
-                                    <i class="bi bi-person-check-fill me-1"></i> Kepala Sekolah
-                                </span>
-                                <h4 class="fw-bold text-white mb-0 mt-2" style="font-size: 1.15rem;">Drs. Ahmad Rudianto, M.Pd</h4>
-                                <div class="text-white-50 small">NIP. 19740512 199903 1 004</div>
+                    <div class="col-lg-4 text-center principal-reveal-left">
+                        <div class="principal-avatar-frame mb-0">
+                            <!-- White Photo Frame -->
+                            <div class="principal-photo-frame">
+                                <img src="{{ asset('images/profile-kepsek-2x.png') }}" alt="Drs. Ahmad Rudianto, M.Pd">
+                            </div>
+
+                            <!-- Emblem Badge with Divider Lines -->
+                            <div class="principal-divider-badge">
+                                <span class="divider-line"></span>
+                                <div class="emblem-circle" title="Tut Wuri Handayani - Kemendikbudristek RI">
+                                    <svg viewBox="0 0 100 100" style="width: 22px; height: 22px;" fill="#ffffff">
+                                        <path d="M50 72 C42 66 32 66 24 70 L24 77 C32 73 42 73 50 78 C58 73 68 73 76 77 L76 70 C68 66 58 66 50 72 Z" fill="#ffffff"/>
+                                        <path d="M50 24 C52 28 55 33 63 35 C58 38 56 44 57 52 C52 47 48 47 43 52 C44 44 42 38 37 35 C45 33 48 28 50 24 Z" fill="#ffffff"/>
+                                        <path d="M33 50 C38 46 45 46 50 51 C55 46 62 46 67 50 C63 56 57 57 50 53 C43 57 37 56 33 50 Z" fill="#ffffff"/>
+                                        <path d="M28 62 C35 58 43 60 50 66 C57 60 65 58 72 62 C67 69 58 69 50 65 C42 69 33 69 28 62 Z" fill="#ffffff"/>
+                                        <ellipse cx="50" cy="20" rx="3" ry="5" fill="#facc15"/>
+                                    </svg>
+                                </div>
+                                <span class="divider-line"></span>
+                            </div>
+
+                            <!-- Name & NIP -->
+                            <h4 class="fw-bold text-white mb-1" style="font-size: 1.25rem; letter-spacing: -0.3px;">Drs. Ahmad Rudianto, M.Pd</h4>
+                            <div class="small mb-2" style="color: #93c5fd; font-size: 0.85rem; letter-spacing: 0.4px;">NIP 19740512 199903 1 004</div>
+
+                            <!-- Role Pill Badge with Decorative Lines -->
+                            <div class="principal-role-pill-wrap">
+                                <span class="role-line"></span>
+                                <span class="principal-role-pill">Kepala Sekolah</span>
+                                <span class="role-line"></span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right: Teks Sambutan & Komitmen Mutu -->
-                    <div class="col-lg-8">
-                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1 small fw-bold mb-3">
-                            <i class="bi bi-chat-quote-fill me-1"></i> SAMBUTAN KEPALA SEKOLAH
-                        </span>
-                        <h3 class="fw-bold text-white mb-3" style="font-size: 1.65rem; line-height: 1.35;">
-                            Membangun Generasi Vokasi yang Unggul, Berkarakter, dan Siap Bersaing di Era Digital
-                        </h3>
-                        
-                        <div class="principal-quote-text mb-0">
-                            "Selamat datang di SMK Gema Cyber School. Di era transformasi digital dan otomasi industri, kami berkomitmen menghadirkan ekosistem pendidikan kejuruan yang relevan, dinamis, dan berakhlak mulia. Kami mendidik setiap siswa agar tidak hanya terampil secara teknis (hard skills), namun juga memiliki integritas, etos kerja tinggi, dan daya adaptasi global yang unggul."
+                    <div class="col-lg-8 principal-reveal-right ps-lg-4">
+                        <!-- Top Badge & Line -->
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="principal-section-badge">SAMBUTAN KEPALA SEKOLAH</span>
+                            <span class="principal-badge-accent-line"></span>
+                        </div>
+
+                        <!-- Main Speech Heading -->
+                        <h2 class="principal-speech-title">
+                            Membangun Generasi Vokasi yang Unggul, Berkarakter, dan <span class="text-cyan-accent">Siap Bersaing di Era Digital</span>
+                        </h2>
+
+                        <!-- Glassmorphic Quote Box -->
+                        <div class="principal-speech-box shadow-sm mb-0">
+                            <div class="d-flex align-items-start gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#38bdf8" viewBox="0 0 16 16" style="flex-shrink: 0; margin-top: 3px;">
+                                    <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"/>
+                                </svg>
+                                <div>
+                                    <p>
+                                        Selamat datang di website resmi SMK Gema Cyber School. Website ini merupakan media informasi dan komunikasi yang diharapkan dapat menjadi jembatan antara sekolah, peserta didik, orang tua, serta masyarakat."
+                                    </p>
+                                    <p>
+                                        Kami berkomitmen untuk menciptakan lingkungan pendidikan yang inspiratif, inovatif, dan berorientasi pada pengembangan potensi peserta didik.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -449,519 +390,452 @@
     </section>
 
     <!-- ==========================================
-         SECTION 3: FASILITAS UNGGULAN KAMPUS
+         PROGRAM KEAHLIAN / PILIHAN JURUSAN UNGGULAN
          ========================================== -->
-    <section class="home-section-padding home-section-bg-light" id="fasilitas">
-        <div class="container">
-            <div class="row align-items-end mb-5 g-2">
-                <div class="col-md-8">
-                    <span class="section-badge-pill section-badge-purple">
-                        <i class="bi bi-buildings-fill text-purple"></i> SARANA & PRASARANA
+    <section class="jurusan-section" id="jurusan">
+        <!-- Top-Left Vector Diagonal Stripes -->
+        <div class="jurusan-bg-decor-left" aria-hidden="true">
+            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                <path d="M-40 0 L60 -100 L120 -100 L20 0 Z" fill="#e0f2fe" opacity="0.7"/>
+                <path d="M-20 80 L130 -70 L190 -70 L40 80 Z" fill="#bae6fd" opacity="0.5"/>
+                <path d="M10 160 L180 -10 L240 -10 L70 160 Z" fill="#e0f2fe" opacity="0.45"/>
+                <path d="M-60 220 L120 40 L170 40 L-10 220 Z" fill="#bae6fd" opacity="0.4"/>
+            </svg>
+        </div>
+
+        <!-- Bottom-Right Subtle Vector Accent -->
+        <div class="jurusan-bg-decor-right-corner" aria-hidden="true">
+            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; right: 0; width: 220px; height: 220px; pointer-events: none; z-index: 0;">
+                <path d="M180 240 L260 160 L300 160 L220 240 Z" fill="#e0f2fe" opacity="0.7"/>
+                <path d="M100 240 L240 100 L280 100 L140 240 Z" fill="#bae6fd" opacity="0.5"/>
+            </svg>
+        </div>
+
+        <!-- School Building Watermark on Right -->
+        <img src="{{ asset('images/profile-about-building-2x.png') }}" alt="" class="jurusan-building-bg" aria-hidden="true">
+
+        <div class="container position-relative z-1">
+            <!-- Section Header (Exact Mockup Design) -->
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center gap-3 mb-2">
+                    <span class="jurusan-header-line"></span>
+                    <span class="jurusan-header-badge">
+                        <i class="bi bi-mortarboard-fill"></i> Program Keahlian
                     </span>
-                    <h2 class="section-title-lg">Fasilitas Modern Penunjang Praktik</h2>
-                    <p class="section-subtitle-text">
-                        Infrastruktur laboratorium mutakhir dan sarana pembelajaran terstandar untuk memaksimalkan potensi kompetensi keahlian siswa.
-                    </p>
+                    <span class="jurusan-header-line"></span>
                 </div>
-                <div class="col-md-4 text-md-end">
-                    <span class="badge bg-white text-secondary border px-3 py-2 rounded-pill small fw-semibold">
-                        <i class="bi bi-check2-all text-primary me-1"></i> Standar Akreditasi Nasional
-                    </span>
-                </div>
+                <h2 class="jurusan-main-title mb-2">
+                    Program <span class="text-program-blue">Keahlian</span>
+                </h2>
+                <p class="jurusan-subtitle mb-3">
+                    Jelajahi berbagai program keahlian unggulan kami untuk masa depan yang lebih baik.
+                </p>
+                <div class="jurusan-title-bar"></div>
             </div>
 
-            <!-- 6 Facility Cards Grid (Upgraded Elite Design) -->
+            <!-- 4 Jurusan Cards (Exact Mockup Layout) -->
             <div class="row g-4">
-                <!-- Fasilitas 1: Lab Komputer -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="facility-home-card card-accent-blue">
-                        <div class="facility-home-img-wrap">
-                            <img src="{{ asset('images/fasilitas-lab-komputer-2x.png') }}" alt="Lab Komputer High-Spec" class="facility-home-img">
-                            <div class="facility-category-badge badge-cat-blue">
-                                <i class="bi bi-laptop me-1"></i> TIK & INFORMATIKA
-                            </div>
-                            <div class="facility-home-badge">
-                                <i class="bi bi-cpu text-info"></i> Intel Core i7 • RAM 16GB
-                            </div>
+                
+                <!-- Card 1: TJKT / TKJ -->
+                <div class="col-lg-3 col-md-6" id="jurusan-tjkt">
+                    <div class="jurusan-new-card card-theme-tjkt">
+                        <div class="jurusan-img-wrap">
+                            <img src="{{ asset('images/jurusan-tjkt-siswa.png') }}" alt="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">
                         </div>
-                        <div class="facility-home-body">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <div class="facility-icon-pill" style="background-color: #eff6ff; color: #2563eb;">
-                                    <i class="bi bi-display"></i>
-                                </div>
-                                <h4 class="facility-home-title">Laboratorium Komputer & Coding</h4>
-                            </div>
-                            <p class="facility-home-desc">
-                                Ruang praktikum komputer modern dengan jaringan gigabit berkecepatan tinggi, perangkat lunak desain visual, pemrograman web, dan aplikasi perkantoran mutakhir.
+                        <div class="jurusan-floating-icon icon-tjkt">
+                            <i class="bi bi-display"></i>
+                        </div>
+                        <div class="jurusan-card-content">
+                            <h3 class="jurusan-card-heading">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</h3>
+                            <p class="jurusan-card-paragraph">
+                                Program keahlian di bidang jaringan dan telekomunikasi untuk menjawab kebutuhan teknologi masa depan.
                             </p>
-                            <div class="facility-spec-tags">
-                                <span class="facility-spec-pill"><i class="bi bi-pc-display text-primary"></i> 36 Unit PC</span>
-                                <span class="facility-spec-pill"><i class="bi bi-speedometer2 text-info"></i> Gigabit LAN</span>
-                                <span class="facility-spec-pill"><i class="bi bi-snow text-primary"></i> Full AC</span>
-                            </div>
-                            <div class="facility-card-footer">
-                                <a href="{{ route('profil.fasilitas') }}" class="facility-link">
-                                    <span>Lihat Detail Fasilitas</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="facility-status-pill text-success">
-                                    <i class="bi bi-patch-check-fill"></i> Standar BNSP
-                                </span>
-                            </div>
+                            <a href="{{ route('jurusan.show', 'tjkt') }}" class="btn-jurusan-detail">
+                                <span>Lihat Detail</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Fasilitas 2: Lab Jaringan TJKT -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="facility-home-card card-accent-cyan">
-                        <div class="facility-home-img-wrap">
-                            <img src="{{ asset('images/fasilitas-lab-jaringan-2x.png') }}" alt="Lab Jaringan Komputer" class="facility-home-img">
-                            <div class="facility-category-badge badge-cat-cyan">
-                                <i class="bi bi-hdd-network me-1"></i> TJKT / TKJ
-                            </div>
-                            <div class="facility-home-badge">
-                                <i class="bi bi-router text-info"></i> Cisco & MikroTik Official
-                            </div>
+                <!-- Card 2: AKL -->
+                <div class="col-lg-3 col-md-6" id="jurusan-akl">
+                    <div class="jurusan-new-card card-theme-akl">
+                        <div class="jurusan-img-wrap">
+                            <img src="{{ asset('images/card-akl-2x.png') }}" alt="Akuntansi & Keuangan Lembaga (AKL)">
                         </div>
-                        <div class="facility-home-body">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <div class="facility-icon-pill" style="background-color: #f0f9ff; color: #0284c7;">
-                                    <i class="bi bi-hdd-network"></i>
-                                </div>
-                                <h4 class="facility-home-title">Lab Jaringan & Fiber Optic (TJKT)</h4>
-                            </div>
-                            <p class="facility-home-desc">
-                                Dilengkapi server rack industri, router MikroTik resmi, switch manageable Cisco, serta peralatan penyambungan fiber optic (fusion splicer & OTDR) terlengkap.
+                        <div class="jurusan-floating-icon icon-akl">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="jurusan-card-content">
+                            <h3 class="jurusan-card-heading">Akuntansi & Keuangan Lembaga (AKL)</h3>
+                            <p class="jurusan-card-paragraph">
+                                Program keahlian akuntansi yang membekali siswa dengan kemampuan mengelola keuangan secara profesional.
                             </p>
-                            <div class="facility-spec-tags">
-                                <span class="facility-spec-pill"><i class="bi bi-server text-info"></i> Server Rack</span>
-                                <span class="facility-spec-pill"><i class="bi bi-router text-primary"></i> Router MikroTik</span>
-                                <span class="facility-spec-pill"><i class="bi bi-lightning-charge text-warning"></i> Splicer FO</span>
-                            </div>
-                            <div class="facility-card-footer">
-                                <a href="{{ route('profil.fasilitas') }}" class="facility-link">
-                                    <span>Lihat Detail Fasilitas</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="facility-status-pill text-success">
-                                    <i class="bi bi-patch-check-fill"></i> Cisco Academy
-                                </span>
-                            </div>
+                            <a href="{{ route('jurusan.show', 'akl') }}" class="btn-jurusan-detail">
+                                <span>Lihat Detail</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Fasilitas 3: Mini Bank & Lab Akuntansi -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="facility-home-card card-accent-emerald">
-                        <div class="facility-home-img-wrap">
-                            <img src="{{ asset('images/fasilitas-praktik-akuntansi-2x.png') }}" alt="Lab Akuntansi & Mini Bank" class="facility-home-img">
-                            <div class="facility-category-badge badge-cat-emerald">
-                                <i class="bi bi-cash-coin me-1"></i> AKUNTANSI & KEUANGAN
-                            </div>
-                            <div class="facility-home-badge">
-                                <i class="bi bi-bank text-warning"></i> Mini Bank & Accurate Online
-                            </div>
+                <!-- Card 3: MPLB -->
+                <div class="col-lg-3 col-md-6" id="jurusan-mplb">
+                    <div class="jurusan-new-card card-theme-mplb">
+                        <div class="jurusan-img-wrap">
+                            <img src="{{ asset('images/card-mplb-2x.png') }}" alt="Manajemen Perkantoran & Layanan Bisnis (MPLB)">
                         </div>
-                        <div class="facility-home-body">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <div class="facility-icon-pill" style="background-color: #ecfdf5; color: #059669;">
-                                    <i class="bi bi-bank2"></i>
-                                </div>
-                                <h4 class="facility-home-title">Mini Bank & Praktik Akuntansi (AKL)</h4>
-                            </div>
-                            <p class="facility-home-desc">
-                                Sarana simulasi operasional perbankan riil dengan loket teller, mesin kasir digital, software Accurate Online resmi, serta laboratorium hitung dagang.
+                        <div class="jurusan-floating-icon icon-mplb">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <div class="jurusan-card-content">
+                            <h3 class="jurusan-card-heading">Manajemen Perkantoran & Layanan Bisnis (MPLB)</h3>
+                            <p class="jurusan-card-paragraph">
+                                Program keahlian yang menyiapkan siswa untuk berkarir di bidang administrasi dan layanan bisnis.
                             </p>
-                            <div class="facility-spec-tags">
-                                <span class="facility-spec-pill"><i class="bi bi-check2-circle text-success"></i> Accurate Online</span>
-                                <span class="facility-spec-pill"><i class="bi bi-cash-stack text-success"></i> Mini Teller</span>
-                                <span class="facility-spec-pill"><i class="bi bi-calculator text-primary"></i> Kasir Digital</span>
-                            </div>
-                            <div class="facility-card-footer">
-                                <a href="{{ route('profil.fasilitas') }}" class="facility-link">
-                                    <span>Lihat Detail Fasilitas</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="facility-status-pill text-success">
-                                    <i class="bi bi-patch-check-fill"></i> LSP P1 Terlisensi
-                                </span>
-                            </div>
+                            <a href="{{ route('jurusan.show', 'mplb') }}" class="btn-jurusan-detail">
+                                <span>Lihat Detail</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Fasilitas 4: Warehouse Logistik -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="facility-home-card card-accent-amber">
-                        <div class="facility-home-img-wrap">
-                            <img src="{{ asset('images/fasilitas-ruang-logistik-2x.png') }}" alt="Ruang Praktik Logistik" class="facility-home-img">
-                            <div class="facility-category-badge badge-cat-amber">
-                                <i class="bi bi-truck me-1"></i> MANAJEMEN LOGISTIK
-                            </div>
-                            <div class="facility-home-badge">
-                                <i class="bi bi-boxes text-warning"></i> Mockup WMS & Barcode Scanner
-                            </div>
+                <!-- Card 4: Logistik -->
+                <div class="col-lg-3 col-md-6" id="jurusan-logistik">
+                    <div class="jurusan-new-card card-theme-logistik">
+                        <div class="jurusan-img-wrap">
+                            <img src="{{ asset('images/card-logistik-2x.png') }}" alt="Teknik Komputer & Logistik">
                         </div>
-                        <div class="facility-home-body">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <div class="facility-icon-pill" style="background-color: #fffbeb; color: #d97706;">
-                                    <i class="bi bi-boxes"></i>
-                                </div>
-                                <h4 class="facility-home-title">Pusat Mockup Warehouse & Logistik</h4>
-                            </div>
-                            <p class="facility-home-desc">
-                                Ruang simulasi tata letak pergudangan, barcode scanner terminal nirkabel, hand pallet hidrolik, dan pengoperasian Warehouse Management System (WMS).
+                        <div class="jurusan-floating-icon icon-logistik">
+                            <i class="bi bi-box-seam-fill"></i>
+                        </div>
+                        <div class="jurusan-card-content">
+                            <h3 class="jurusan-card-heading">Teknik Komputer & Logistik</h3>
+                            <p class="jurusan-card-paragraph">
+                                Program keahlian di bidang teknologi komputer dan logistik untuk mendukung dunia industri dan bisnis.
                             </p>
-                            <div class="facility-spec-tags">
-                                <span class="facility-spec-pill"><i class="bi bi-diagram-2 text-warning"></i> Sistem WMS</span>
-                                <span class="facility-spec-pill"><i class="bi bi-upc-scan text-primary"></i> Barcode Scanner</span>
-                                <span class="facility-spec-pill"><i class="bi bi-box-seam text-secondary"></i> Rak Susun</span>
-                            </div>
-                            <div class="facility-card-footer">
-                                <a href="{{ route('profil.fasilitas') }}" class="facility-link">
-                                    <span>Lihat Detail Fasilitas</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="facility-status-pill text-success">
-                                    <i class="bi bi-patch-check-fill"></i> Standar Industri
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fasilitas 5: Smart Classroom -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="facility-home-card card-accent-purple">
-                        <div class="facility-home-img-wrap">
-                            <img src="{{ asset('images/fasilitas-kelas-modern-2x.png') }}" alt="Smart Classroom Ber-AC" class="facility-home-img">
-                            <div class="facility-category-badge badge-cat-purple">
-                                <i class="bi bi-display me-1"></i> RUANG KELAS MODERN
-                            </div>
-                            <div class="facility-home-badge">
-                                <i class="bi bi-tv text-info"></i> Interactive Smart TV 65" & AC
-                            </div>
-                        </div>
-                        <div class="facility-home-body">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <div class="facility-icon-pill" style="background-color: #f5f3ff; color: #7c3aed;">
-                                    <i class="bi bi-tv"></i>
-                                </div>
-                                <h4 class="facility-home-title">Smart Classroom Ber-AC & Interaktif</h4>
-                            </div>
-                            <p class="facility-home-desc">
-                                Ruang kelas berpendingin udara (AC) dengan smart interactive TV, sound system wireless, dan meja belajar modular untuk diskusi kolaboratif.
-                            </p>
-                            <div class="facility-spec-tags">
-                                <span class="facility-spec-pill"><i class="bi bi-tv text-purple"></i> Smart TV 65"</span>
-                                <span class="facility-spec-pill"><i class="bi bi-snow text-info"></i> Dual Split AC</span>
-                                <span class="facility-spec-pill"><i class="bi bi-wifi text-primary"></i> High-Speed WiFi</span>
-                            </div>
-                            <div class="facility-card-footer">
-                                <a href="{{ route('profil.fasilitas') }}" class="facility-link">
-                                    <span>Lihat Detail Fasilitas</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="facility-status-pill text-success">
-                                    <i class="bi bi-patch-check-fill"></i> Audio Visual HD
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fasilitas 6: Perpustakaan Digital -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="facility-home-card card-accent-teal">
-                        <div class="facility-home-img-wrap">
-                            <img src="{{ asset('images/fasilitas-perpustakaan-2x.png') }}" alt="Perpustakaan Digital" class="facility-home-img">
-                            <div class="facility-category-badge badge-cat-teal">
-                                <i class="bi bi-book me-1"></i> LITERASI & RISET
-                            </div>
-                            <div class="facility-home-badge">
-                                <i class="bi bi-journal-bookmark text-warning"></i> 5.000+ E-Book & Jurnal Ilmiah
-                            </div>
-                        </div>
-                        <div class="facility-home-body">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <div class="facility-icon-pill" style="background-color: #f0fdfa; color: #0d9488;">
-                                    <i class="bi bi-book-half"></i>
-                                </div>
-                                <h4 class="facility-home-title">Perpustakaan Digital & Ruang Baca</h4>
-                            </div>
-                            <p class="facility-home-desc">
-                                Pusat referensi literasi dengan koleksi ribuan buku fisik dan e-book vokasi, ruang baca hening berkarpet, terminal PC riset, dan akses jurnal online.
-                            </p>
-                            <div class="facility-spec-tags">
-                                <span class="facility-spec-pill"><i class="bi bi-journal-richtext text-success"></i> 5.000+ Koleksi</span>
-                                <span class="facility-spec-pill"><i class="bi bi-laptop text-info"></i> PC E-Library</span>
-                                <span class="facility-spec-pill"><i class="bi bi-cup-hot text-amber"></i> Ruang Diskusi</span>
-                            </div>
-                            <div class="facility-card-footer">
-                                <a href="{{ route('profil.fasilitas') }}" class="facility-link">
-                                    <span>Lihat Detail Fasilitas</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                                <span class="facility-status-pill text-success">
-                                    <i class="bi bi-patch-check-fill"></i> Terakreditasi A
-                                </span>
-                            </div>
+                            <a href="{{ route('jurusan.show', 'logistik') }}" class="btn-jurusan-detail">
+                                <span>Lihat Detail</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Tombol Lihat Selengkapnya Menuju Halaman Fasilitas -->
+    <!-- ==========================================
+         SECTION 1: KEUNGGULAN SEKOLAH (WHY CHOOSE US)
+         ========================================== -->
+    <section class="keunggulan-section" id="keunggulan">
+        <div class="container position-relative z-1">
+            <!-- Section Header (Exact Mockup Design) -->
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center gap-3 mb-2">
+                    <span class="keunggulan-header-line"></span>
+                    <span class="keunggulan-header-badge">
+                        <i class="bi bi-mortarboard-fill"></i> Keunggulan Kami
+                    </span>
+                    <span class="keunggulan-header-line"></span>
+                </div>
+                <h2 class="keunggulan-main-title mb-2">
+                    Mengapa Memilih <span class="text-blue-accent">SMK Gema Cyber School?</span>
+                </h2>
+                <p class="keunggulan-subtitle mb-3">
+                    Kami berkomitmen untuk memberikan pendidikan berkualitas dengan fasilitas lengkap, kurikulum berbasis industri, dan lingkungan belajar yang mendukung potensi terbaik siswa.
+                </p>
+                <div class="keunggulan-title-bar"></div>
+            </div>
+
+            <!-- 4 Keunggulan Cards -->
+            <div class="row g-4">
+                <!-- Card 1: Link & Match Industri -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="keunggulan-card card-border-blue">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="keunggulan-icon-box icon-box-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    <polyline points="10 7 7 10 10 13"></polyline>
+                                    <polyline points="14 7 17 10 14 13"></polyline>
+                                </svg>
+                            </div>
+                            <span class="keunggulan-step-num num-blue">01</span>
+                        </div>
+                        <h3 class="keunggulan-card-title">Link & Match Industri</h3>
+                        <p class="keunggulan-card-desc">
+                            Menghadirkan pembelajaran langsung dengan dunia industri melalui kerja sama strategis dengan berbagai perusahaan teknologi.
+                        </p>
+                        <ul class="keunggulan-points">
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-blue"></i>
+                                <span>Magang industri & sertifikasi</span>
+                            </li>
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-blue"></i>
+                                <span>Peluang kerja lebih luas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Sertifikasi Berstandar -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="keunggulan-card card-border-green">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="keunggulan-icon-box icon-box-green">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <span class="keunggulan-step-num num-green">02</span>
+                        </div>
+                        <h3 class="keunggulan-card-title">Sertifikasi Berstandar</h3>
+                        <p class="keunggulan-card-desc">
+                            Menyediakan program sertifikasi kompetensi yang diakui industri, untuk meningkatkan daya saing lulusan di dunia kerja.
+                        </p>
+                        <ul class="keunggulan-points">
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-green"></i>
+                                <span>Sertifikasi nasional & internasional</span>
+                            </li>
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-green"></i>
+                                <span>Kompetensi terukur</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Tenaga Kependidikan Profesional -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="keunggulan-card card-border-orange">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="keunggulan-icon-box icon-box-orange">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <span class="keunggulan-step-num num-orange">03</span>
+                        </div>
+                        <h3 class="keunggulan-card-title">Tenaga Kependidikan Profesional</h3>
+                        <p class="keunggulan-card-desc">
+                            Didukung oleh tenaga pendidik berpengalaman dan profesional di bidangnya, siap membimbing dan menginspirasi siswa.
+                        </p>
+                        <ul class="keunggulan-points">
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-orange"></i>
+                                <span>Guru ahli di bidangnya</span>
+                            </li>
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-orange"></i>
+                                <span>Pembelajaran berkualitas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4: Teaching Factory Modern -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="keunggulan-card card-border-purple">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="keunggulan-icon-box icon-box-purple">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <span class="keunggulan-step-num num-purple">04</span>
+                        </div>
+                        <h3 class="keunggulan-card-title">Teaching Factory Modern</h3>
+                        <p class="keunggulan-card-desc">
+                            Fasilitas Teaching Factory dengan teknologi terkini untuk melatih keterampilan nyata sesuai kebutuhan industri.
+                        </p>
+                        <ul class="keunggulan-points">
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-purple"></i>
+                                <span>Praktikum dengan industri</span>
+                            </li>
+                            <li class="keunggulan-point-item">
+                                <i class="bi bi-check-circle-fill point-icon-purple"></i>
+                                <span>Project-based learning</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: GALERI DOKUMENTASI SEKOLAH (SHOWCASE)
+         ========================================== -->
+    <section class="galeri-showcase-section" id="galeri">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center gap-3 mb-2">
+                    <span class="galeri-header-line"></span>
+                    <span class="galeri-header-badge">
+                        <i class="bi bi-camera-fill"></i> Dokumentasi Aktivitas
+                    </span>
+                    <span class="galeri-header-line"></span>
+                </div>
+                <h2 class="galeri-main-title mb-2">
+                    Galeri <span class="text-blue-accent">Kegiatan Sekolah</span>
+                </h2>
+                <p class="galeri-subtitle mb-3">
+                    Potret dinamika pembelajaran, karya inovasi siswa, pembinaan karakter, dan momen istimewa di SMK Gema Cyber School.
+                </p>
+                <div class="galeri-title-bar"></div>
+            </div>
+
+            <!-- 6 Featured Galeri Cards Grid -->
+            <div class="row g-4">
+                <!-- Card 1: Wisuda -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ route('galeri.index') }}" class="galeri-showcase-card">
+                        <div class="galeri-img-wrap">
+                            <img src="{{ asset('images/galeri/wisuda.jpg') }}" alt="Wisuda & Pelepasan Siswa" class="galeri-img">
+                            <div class="galeri-gradient-overlay"></div>
+                            <span class="galeri-cat-badge text-warning" style="color: #d97706 !important;">
+                                <i class="bi bi-mortarboard-fill me-1"></i>Agenda Sekolah
+                            </span>
+                            <div class="galeri-icon-expand">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+                            <div class="galeri-caption-overlay">
+                                <div class="galeri-meta-date">
+                                    <i class="bi bi-calendar3"></i> 20 Juni 2026 • Grand Ballroom
+                                </div>
+                                <h3 class="galeri-card-title">Wisuda & Pelepasan Siswa Angkatan IX</h3>
+                                <p class="galeri-card-desc">Pelepasan 320 lulusan berkarakter yang siap berkarya di industri & pendidikan tinggi.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 2: Praktik Lab -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ route('galeri.index') }}" class="galeri-showcase-card">
+                        <div class="galeri-img-wrap">
+                            <img src="{{ asset('images/galeri/praktik-lab.jpg') }}" alt="Praktikum Lab Komputer" class="galeri-img">
+                            <div class="galeri-gradient-overlay"></div>
+                            <span class="galeri-cat-badge text-primary" style="color: #0284c7 !important;">
+                                <i class="bi bi-laptop-fill me-1"></i>Praktik Kejuruan
+                            </span>
+                            <div class="galeri-icon-expand">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+                            <div class="galeri-caption-overlay">
+                                <div class="galeri-meta-date">
+                                    <i class="bi bi-calendar3"></i> 14 Mei 2026 • Lab Jaringan Komputer
+                                </div>
+                                <h3 class="galeri-card-title">Praktikum Cyber Defense & Jaringan Komputer</h3>
+                                <p class="galeri-card-desc">Simulasi uji penetrasi keamanan server dan arsitektur cloud di laboratorium modern.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 3: Gelar Karya / Expo -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ route('galeri.index') }}" class="galeri-showcase-card">
+                        <div class="galeri-img-wrap">
+                            <img src="{{ asset('images/galeri/expo.jpg') }}" alt="Gelar Karya Inovasi Teaching Factory" class="galeri-img">
+                            <div class="galeri-gradient-overlay"></div>
+                            <span class="galeri-cat-badge text-success" style="color: #10b981 !important;">
+                                <i class="bi bi-stars me-1"></i>Pameran Karya
+                            </span>
+                            <div class="galeri-icon-expand">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+                            <div class="galeri-caption-overlay">
+                                <div class="galeri-meta-date">
+                                    <i class="bi bi-calendar3"></i> 28 April 2026 • Hall Teaching Factory
+                                </div>
+                                <h3 class="galeri-card-title">Gelar Karya Inovasi Teaching Factory</h3>
+                                <p class="galeri-card-desc">Pameran produk teknologi, otomasi IoT, dan karya kreatif digital buatan siswa.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 4: Job Fair -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ route('galeri.index') }}" class="galeri-showcase-card">
+                        <div class="galeri-img-wrap">
+                            <img src="{{ asset('images/galeri/jobfair.jpg') }}" alt="Bursa Kerja Khusus & Rekrutmen Industri" class="galeri-img">
+                            <div class="galeri-gradient-overlay"></div>
+                            <span class="galeri-cat-badge" style="color: #7c3aed !important;">
+                                <i class="bi bi-briefcase-fill me-1"></i>Kemitraan Industri
+                            </span>
+                            <div class="galeri-icon-expand">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+                            <div class="galeri-caption-overlay">
+                                <div class="galeri-meta-date">
+                                    <i class="bi bi-calendar3"></i> 10 Maret 2026 • Pusat Karir & BKK
+                                </div>
+                                <h3 class="galeri-card-title">Bursa Kerja Khusus (BKK) & Rekrutmen Industri</h3>
+                                <p class="galeri-card-desc">Kerja sama rekrutmen langsung bersama puluhan mitra perusahaan teknologi nasional.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 5: Seminar -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ route('galeri.index') }}" class="galeri-showcase-card">
+                        <div class="galeri-img-wrap">
+                            <img src="{{ asset('images/galeri/seminar.jpg') }}" alt="Seminar Wawasan Teknologi" class="galeri-img">
+                            <div class="galeri-gradient-overlay"></div>
+                            <span class="galeri-cat-badge" style="color: #ea580c !important;">
+                                <i class="bi bi-lightbulb-fill me-1"></i>Edukasi & Vokasi
+                            </span>
+                            <div class="galeri-icon-expand">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+                            <div class="galeri-caption-overlay">
+                                <div class="galeri-meta-date">
+                                    <i class="bi bi-calendar3"></i> 15 Februari 2026 • Auditorium Utama
+                                </div>
+                                <h3 class="galeri-card-title">Seminar Wawasan Teknologi AI & Industri 4.0</h3>
+                                <p class="galeri-card-desc">Kuliah umum bersama praktisi industri teknologi terkemuka untuk siswa dan guru.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 6: Upacara -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="{{ route('galeri.index') }}" class="galeri-showcase-card">
+                        <div class="galeri-img-wrap">
+                            <img src="{{ asset('images/galeri/upacara.jpg') }}" alt="Peringatan Hari Pendidikan" class="galeri-img">
+                            <div class="galeri-gradient-overlay"></div>
+                            <span class="galeri-cat-badge text-danger" style="color: #dc2626 !important;">
+                                <i class="bi bi-flag-fill me-1"></i>Pembinaan Karakter
+                            </span>
+                            <div class="galeri-icon-expand">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </div>
+                            <div class="galeri-caption-overlay">
+                                <div class="galeri-meta-date">
+                                    <i class="bi bi-calendar3"></i> 02 Mei 2026 • Lapangan Upacara
+                                </div>
+                                <h3 class="galeri-card-title">Peringatan Hari Pendidikan & Apel Karakter</h3>
+                                <p class="galeri-card-desc">Upacara khidmat penanaman nilai budi pekerti, kedisiplinan, dan cinta tanah air.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom CTA Button -->
             <div class="text-center mt-5">
-                <a href="{{ route('profil.fasilitas') }}" class="btn-facility-more">
-                    <i class="bi bi-buildings-fill me-2"></i>
-                    <span>Lihat Selengkapnya Fasilitas Sekolah</span>
+                <a href="{{ route('galeri.index') }}" class="btn-galeri-showcase-all">
+                    <i class="bi bi-images me-2"></i>
+                    <span>Lihat Seluruh Koleksi Dokumentasi & Foto Kegiatan</span>
                     <i class="bi bi-arrow-right ms-2"></i>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 4: INFORMASI & ALUR PPDB ONLINE
-         ========================================== -->
-    <section class="home-section-padding" id="ppdb">
-        <div class="container">
-            <!-- Header -->
-            <div class="text-center mb-5">
-                <span class="section-badge-pill section-badge-success">
-                    <i class="bi bi-mortarboard-fill text-success"></i> PENERIMAAN PESERTA DIDIK BARU (PPDB)
-                </span>
-                <h2 class="section-title-lg">PPDB Online T.A 2025/2026 Telah Dibuka!</h2>
-                <p class="section-subtitle-text mx-auto">
-                    Raih masa depan gemilang bersama SMK Gema Cyber School. Ikuti proses pendaftaran online yang praktis, cepat, dan transparan.
-                </p>
-            </div>
-
-            <!-- 4 Alur Langkah PPDB -->
-            <div class="row g-4 mb-5">
-                <!-- Step 1 -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="ppdb-flow-card text-center">
-                        <div class="ppdb-flow-step-num">1</div>
-                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Registrasi Online</h4>
-                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
-                            Buka portal PPDB resmi, buat akun calon siswa baru, dan isi formulir biodata lengkap beserta pemilihan jurusan yang diminati.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="ppdb-flow-card text-center">
-                        <div class="ppdb-flow-step-num">2</div>
-                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Unggah Berkas</h4>
-                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
-                            Upload salinan rapor SMP/MTs, Kartu Keluarga (KK), Akta Kelahiran, dan pas foto terbaru secara digital melalui portal akun.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="ppdb-flow-card text-center">
-                        <div class="ppdb-flow-step-num">3</div>
-                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Tes Minat & Wawancara</h4>
-                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
-                            Mengikuti pemetaan bakat minat kejuruan dan sesi wawancara motivasi belajar bersama tim konselor guru profesional.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="ppdb-flow-card text-center">
-                        <div class="ppdb-flow-step-num">4</div>
-                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Daftar Ulang</h4>
-                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
-                            Pengumuman hasil seleksi kelulusan, penyelesaian administrasi daftar ulang, dan penerimaan seragam serta jadwal MPLS.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Banner Call To Action PPDB -->
-            <div class="ppdb-cta-banner">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-8">
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill small">GELOMBANG 1 DIBUKA</span>
-                            <span class="text-white-50 small">Potongan Biaya Pengembangan Pendidikan 50%</span>
-                        </div>
-                        <h3 class="fw-bold text-white mb-2" style="font-size: 1.6rem;">Siap Menjadi Bagian Generasi Digital Berprestasi?</h3>
-                        <p class="text-white-50 mb-0 small" style="max-width: 620px; line-height: 1.6;">
-                            Kuota kelas untuk masing-masing jurusan terbatas demi menjaga kualitas pembelajaran praktikum laboratorium. Segera amankan kursi Anda sekarang juga.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <div class="d-flex flex-column flex-sm-row flex-lg-column gap-2 justify-content-lg-end">
-                            <a href="https://wa.me/6281234567890?text=Halo%20Panitia%20PPDB%20SMK%20Gema%20Cyber,%20saya%20ingin%20mendaftar%20PPDB" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 shadow-sm">
-                                <i class="bi bi-mortarboard-fill me-1"></i> Daftar Sekarang via WA
-                            </a>
-                            <a href="#kontak" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">
-                                <i class="bi bi-info-circle me-1"></i> Panduan Syarat PPDB
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 5: EKSTRAKURIKULER & PRESTASI SISWA
-         ========================================== -->
-    <section class="home-section-padding home-section-bg-light" id="ekskul">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Kolom Kiri: Kegiatan Ekstrakurikuler -->
-                <div class="col-lg-7">
-                    <div class="mb-4">
-                        <span class="section-badge-pill section-badge-primary">
-                            <i class="bi bi-compass-fill text-primary"></i> PENGEMBANGAN DIRI
-                        </span>
-                        <h2 class="section-title-lg">Ekstrakurikuler Pilihan</h2>
-                        <p class="section-subtitle-text">
-                            Wadah eksplorasi minat, bakat, kepemimpinan, dan kebugaran jasmani bagi seluruh siswa di luar jam KBM.
-                        </p>
-                    </div>
-
-                    <div class="row g-3">
-                        <!-- Ekskul 1 -->
-                        <div class="col-sm-6">
-                            <div class="ekskul-mini-card">
-                                <div class="ekskul-icon-wrap" style="background-color: #eff6ff; color: #2563eb;">
-                                    <i class="bi bi-shield-lock-fill"></i>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Cyber Security Club</h5>
-                                    <div class="text-secondary small" style="font-size: 0.76rem;">Ethical Hacking & Networking</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Ekskul 2 -->
-                        <div class="col-sm-6">
-                            <div class="ekskul-mini-card">
-                                <div class="ekskul-icon-wrap" style="background-color: #ecfdf5; color: #059669;">
-                                    <i class="bi bi-robot"></i>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Robotika & IoT</h5>
-                                    <div class="text-secondary small" style="font-size: 0.76rem;">Mikrokontroler & Otomasi</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Ekskul 3 -->
-                        <div class="col-sm-6">
-                            <div class="ekskul-mini-card">
-                                <div class="ekskul-icon-wrap" style="background-color: #fffbeb; color: #d97706;">
-                                    <i class="bi bi-flag-fill"></i>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Paskibra & Pasus</h5>
-                                    <div class="text-secondary small" style="font-size: 0.76rem;">Kedisiplinan & Baris Berbaris</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Ekskul 4 -->
-                        <div class="col-sm-6">
-                            <div class="ekskul-mini-card">
-                                <div class="ekskul-icon-wrap" style="background-color: #fef2f2; color: #dc2626;">
-                                    <i class="bi bi-trophy-fill"></i>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Futsal & E-Sport</h5>
-                                    <div class="text-secondary small" style="font-size: 0.76rem;">Turnamen Olahraga Prestasi</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Ekskul 5 -->
-                        <div class="col-sm-6">
-                            <div class="ekskul-mini-card">
-                                <div class="ekskul-icon-wrap" style="background-color: #f5f3ff; color: #7c3aed;">
-                                    <i class="bi bi-chat-left-dots-fill"></i>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">English Debate Club</h5>
-                                    <div class="text-secondary small" style="font-size: 0.76rem;">Public Speaking & TOEIC</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Ekskul 6 -->
-                        <div class="col-sm-6">
-                            <div class="ekskul-mini-card">
-                                <div class="ekskul-icon-wrap" style="background-color: #f0fdfa; color: #0d9488;">
-                                    <i class="bi bi-palette-fill"></i>
-                                </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1" style="font-size: 0.95rem;">Desain & Multimedia</h5>
-                                    <div class="text-secondary small" style="font-size: 0.76rem;">Fotografi & Konten Kreator</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kolom Kanan: Prestasi Siswa Terkini -->
-                <div class="col-lg-5" id="prestasi">
-                    <div class="mb-4">
-                        <span class="section-badge-pill section-badge-amber">
-                            <i class="bi bi-award-fill text-warning"></i> REKAM JEJAK JUARA
-                        </span>
-                        <h2 class="section-title-lg">Prestasi Siswa</h2>
-                        <p class="section-subtitle-text">
-                            Dedikasi dan kerja keras siswa-siswi SMK Gema Cyber School dalam menorehkan prestasi gemilang.
-                        </p>
-                    </div>
-
-                    <!-- Prestasi 1 -->
-                    <div class="prestasi-item-card">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="badge bg-warning-subtle text-warning border border-warning-subtle rounded-pill px-2 py-0 small fw-bold">JUARA 1 TINGKAT PROVINSI</span>
-                            <span class="text-secondary small" style="font-size: 0.75rem;"><i class="bi bi-calendar3 me-1"></i>2026</span>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-1" style="font-size: 1rem;">LKS SMK Bidang Cyber Security</h5>
-                        <p class="text-secondary small mb-0" style="line-height: 1.5;">
-                            Diraih oleh Tim Siswa TJKT atas keunggulan analisis forensik digital, network defense, dan pengujian penetrasi keamanan sistem.
-                        </p>
-                    </div>
-
-                    <!-- Prestasi 2 -->
-                    <div class="prestasi-item-card" style="border-left-color: #0d6efd;">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-2 py-0 small fw-bold">JUARA 2 NASIONAL</span>
-                            <span class="text-secondary small" style="font-size: 0.75rem;"><i class="bi bi-calendar3 me-1"></i>2026</span>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-1" style="font-size: 1rem;">National Accurate Accounting Challenge</h5>
-                        <p class="text-secondary small mb-0" style="line-height: 1.5;">
-                            Kompetisi simulasi akuntansi digital perusahaan dagang dan manufaktur yang diikuti lebih dari 120 sekolah se-Indonesia.
-                        </p>
-                    </div>
-
-                    <!-- Prestasi 3 -->
-                    <div class="prestasi-item-card" style="border-left-color: #059669;">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2 py-0 small fw-bold">MEDALI EMAS</span>
-                            <span class="text-secondary small" style="font-size: 0.75rem;"><i class="bi bi-calendar3 me-1"></i>2025</span>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-1" style="font-size: 1rem;">Olimpiade Vokasi Supply Chain & Logistik</h5>
-                        <p class="text-secondary small mb-0" style="line-height: 1.5;">
-                            Prestasi bidang manajemen pergudangan, efisiensi alur distribusi barang, dan sistem inventaris digital.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -982,7 +856,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <a href="#berita" class="btn btn-outline-primary rounded-pill px-4 py-2 small fw-bold">
+                    <a href="{{ route('berita.index') }}" class="btn btn-outline-primary rounded-pill px-4 py-2 small fw-bold">
                         <span>Lihat Semua Berita</span>
                         <i class="bi bi-arrow-right ms-1"></i>
                     </a>
@@ -995,19 +869,19 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="news-card-home">
                         <div class="news-thumb-box">
-                            <img src="{{ asset('images/berita-lks-cyber.png') }}" alt="Siswa SMK Gema Cyber Raih Juara LKS" class="news-thumb-img">
+                            <img src="{{ asset('images/prestasi/lks-cyber-security.jpg') }}" alt="Siswa SMK Gema Cyber Raih Juara LKS" class="news-thumb-img">
                         </div>
                         <div class="news-body-box">
                             <div class="news-date-badge">
-                                <i class="bi bi-calendar-event text-primary"></i> 18 Oktober 2026 • <span class="badge bg-primary-subtle text-primary">Prestasi</span>
+                                <i class="bi bi-calendar-event text-primary"></i> 18 Oktober 2026 &bull; <span class="badge bg-primary-subtle text-primary">Prestasi</span>
                             </div>
-                            <a href="#" class="news-title-link">
+                            <a href="{{ route('berita.show', 'siswa-smk-gema-cyber-raih-emas-lks-cyber-security') }}" class="news-title-link">
                                 Siswa SMK Gema Cyber Raih Medali Emas LKS Tingkat Provinsi Bidang Cyber Security
                             </a>
                             <p class="news-excerpt">
                                 Prestasi membanggakan kembali diukir oleh kontingen siswa kejuruan TJKT setelah melalui 3 babak penugasan network defense dan ethical hacking.
                             </p>
-                            <a href="#" class="jurusan-card-link mt-auto">
+                            <a href="{{ route('berita.show', 'siswa-smk-gema-cyber-raih-emas-lks-cyber-security') }}" class="jurusan-card-link mt-auto">
                                 <span>Baca Selengkapnya</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -1019,19 +893,19 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="news-card-home">
                         <div class="news-thumb-box">
-                            <img src="{{ asset('images/berita-mou-industri.png') }}" alt="MoU Kelas Industri Bersama PT Telkom" class="news-thumb-img">
+                            <img src="{{ asset('images/galeri/seminar.jpg') }}" alt="MoU Kelas Industri Bersama PT Telkom" class="news-thumb-img">
                         </div>
                         <div class="news-body-box">
                             <div class="news-date-badge">
-                                <i class="bi bi-calendar-event text-primary"></i> 12 Oktober 2026 • <span class="badge bg-success-subtle text-success">Kerjasama DUDI</span>
+                                <i class="bi bi-calendar-event text-primary"></i> 12 Oktober 2026 &bull; <span class="badge bg-success-subtle text-success">Kerjasama DUDI</span>
                             </div>
-                            <a href="#" class="news-title-link">
+                            <a href="{{ route('berita.show', 'kunjungan-industri-mou-kelas-khusus-pt-telkom') }}" class="news-title-link">
                                 Kunjungan Industri & Penandatanganan MoU Kelas Khusus Bersama PT Telkom Indonesia
                             </a>
                             <p class="news-excerpt">
                                 Penyelarasan kurikulum berbasis industri teknologi telekomunikasi dan komitmen pembukaan kuota magang prioritas bagi siswa berprestasi.
                             </p>
-                            <a href="#" class="jurusan-card-link mt-auto">
+                            <a href="{{ route('berita.show', 'kunjungan-industri-mou-kelas-khusus-pt-telkom') }}" class="jurusan-card-link mt-auto">
                                 <span>Baca Selengkapnya</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -1043,19 +917,19 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="news-card-home">
                         <div class="news-thumb-box">
-                            <img src="{{ asset('images/berita-ukk-bnsp.png') }}" alt="Pelaksanaan UKK BNSP Berjalan Sukses" class="news-thumb-img">
+                            <img src="{{ asset('images/galeri/praktik-lab.jpg') }}" alt="Pelaksanaan UKK BNSP Berjalan Sukses" class="news-thumb-img">
                         </div>
                         <div class="news-body-box">
                             <div class="news-date-badge">
-                                <i class="bi bi-calendar-event text-primary"></i> 05 Oktober 2026 • <span class="badge bg-warning-subtle text-warning">Sertifikasi</span>
+                                <i class="bi bi-calendar-event text-primary"></i> 05 Oktober 2026 &bull; <span class="badge bg-warning-subtle text-warning">Sertifikasi</span>
                             </div>
-                            <a href="#" class="news-title-link">
+                            <a href="{{ route('berita.show', 'pelaksanaan-uji-sertifikasi-kompetensi-bnsp-2026') }}" class="news-title-link">
                                 Pelaksanaan Uji Sertifikasi Kompetensi (USK) BNSP Tahun Ajaran 2026 Berjalan Sukses
                             </a>
                             <p class="news-excerpt">
                                 Seluruh peserta didik tingkat akhir menyelesaikan serangkaian uji teknis kompetensi profesi di hadapan tim asesor independen berlisensi BNSP.
                             </p>
-                            <a href="#" class="jurusan-card-link mt-auto">
+                            <a href="{{ route('berita.show', 'pelaksanaan-uji-sertifikasi-kompetensi-bnsp-2026') }}" class="jurusan-card-link mt-auto">
                                 <span>Baca Selengkapnya</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -1067,185 +941,320 @@
     </section>
 
     <!-- ==========================================
-         SECTION 7: GALERI DOKUMENTASI & VIDEO
+         SECTION 8: MITRA INDUSTRI & PENYALURAN KERJA (MINIMALIST CORPORATE & UNIFIED STATS)
          ========================================== -->
-    <section class="home-section-padding home-section-bg-light" id="galeri">
+    <section class="mitra-industri-section" id="mitra">
         <div class="container">
+            <!-- Section Header -->
             <div class="text-center mb-5">
-                <span class="section-badge-pill section-badge-purple">
-                    <i class="bi bi-camera-fill text-purple"></i> DOKUMENTASI SEKOLAH
-                </span>
-                <h2 class="section-title-lg">Galeri Aktivitas Pembelajaran</h2>
-                <p class="section-subtitle-text mx-auto">
-                    Momen inspiratif dalam dinamika belajar, praktik teknologi laboratorium, dan pembinaan karakter di SMK Gema Cyber School.
+                <div class="d-inline-flex align-items-center gap-3 mb-2">
+                    <span class="mitra-header-line"></span>
+                    <span class="mitra-header-badge">
+                        <i class="bi bi-briefcase-fill"></i> Jejaring Kemitraan & DUDI
+                    </span>
+                    <span class="mitra-header-line"></span>
+                </div>
+                <h2 class="mitra-main-title mb-2">
+                    Mitra Industri & <span class="text-blue-accent">Penyaluran Kerja</span>
+                </h2>
+                <p class="mitra-subtitle mb-3">
+                    Bekerja sama erat dengan korporasi nasional terkemuka dan lembaga sertifikasi resmi untuk menjamin keselarasan kurikulum serta keterserapan kerja lulusan.
                 </p>
+                <div class="mitra-title-bar"></div>
             </div>
 
-            <!-- 4 Gallery Grid Items -->
-            <div class="row g-4 mb-4">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="gallery-thumb-item">
-                        <img src="{{ asset('images/galeri-kegiatan-1.png') }}" alt="Praktikum Fiber Optic" class="gallery-thumb-img">
-                        <div class="gallery-caption-overlay">
-                            Praktikum Splicing Jaringan
+            <!-- 8 Minimalist Corporate Partner Tiles Grid -->
+            <div class="row g-3 g-lg-4 justify-content-center mb-5">
+                <!-- Telkom -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="18" cy="18" r="16" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8"/>
+                                <path d="M18 7C11.92 7 7 11.92 7 18C7 24.08 11.92 29 18 29" stroke="#dc2626" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="18" cy="18" r="6" fill="#dc2626"/>
+                                <path d="M21 11C23.5 12.5 25 15.1 25 18C25 20.9 23.5 23.5 21 25" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
                         </div>
+                        <h4 class="partner-tile-name">PT Telkom Indonesia</h4>
+                        <span class="partner-tile-domain">Telekomunikasi & Digital</span>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-6">
-                    <div class="gallery-thumb-item">
-                        <img src="{{ asset('images/galeri-kegiatan-2.png') }}" alt="Simulasi Mini Bank" class="gallery-thumb-img">
-                        <div class="gallery-caption-overlay">
-                            Simulasi Transaksi Perbankan
+                <!-- Astra -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#f0f7ff" stroke="#bfdbfe" stroke-width="1.2"/>
+                                <path d="M18 6L21.5 14.5L30 18L21.5 21.5L18 30L14.5 21.5L6 18L14.5 14.5L18 6Z" fill="#003b7a"/>
+                                <circle cx="18" cy="18" r="3.5" fill="#ffffff"/>
+                            </svg>
                         </div>
+                        <h4 class="partner-tile-name">PT Astra International</h4>
+                        <span class="partner-tile-domain">Manufaktur & Otomotif</span>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-6">
-                    <div class="gallery-thumb-item">
-                        <img src="{{ asset('images/galeri-kegiatan-3.png') }}" alt="Workshop Robotika" class="gallery-thumb-img">
-                        <div class="gallery-caption-overlay">
-                            Workshop Robotika & IoT
+                <!-- Bank Mandiri -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2"/>
+                                <path d="M6 14C12 14 16 11 22 11C27 11 29 13 30 14" stroke="#003087" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M6 20C12 20 16 17 22 17C27 17 29 19 30 20" stroke="#f59e0b" stroke-width="3.2" stroke-linecap="round"/>
+                                <path d="M6 26C12 26 16 23 22 23C27 23 29 25 30 26" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
                         </div>
+                        <h4 class="partner-tile-name">Bank Mandiri</h4>
+                        <span class="partner-tile-domain">Perbankan & Keuangan</span>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-6">
-                    <div class="gallery-thumb-item">
-                        <img src="{{ asset('images/galeri-kegiatan-4.png') }}" alt="Bursa Kerja BKK" class="gallery-thumb-img">
-                        <div class="gallery-caption-overlay">
-                            Job Fair & Rekrutmen Kerja
+                <!-- Pos Indonesia -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.2"/>
+                                <path d="M18 5L29 10V18C29 24.5 24 29.5 18 31C12 29.5 7 24.5 7 18V10L18 5Z" fill="#ea580c"/>
+                                <path d="M11 16C15 13 21 13 25 18C21 17 17 19 14 23C13 20 12 18 11 16Z" fill="#ffffff"/>
+                            </svg>
                         </div>
+                        <h4 class="partner-tile-name">PT Pos Indonesia</h4>
+                        <span class="partner-tile-domain">BUMN Logistik & Pos</span>
+                    </div>
+                </div>
+
+                <!-- JNE -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+                                <path d="M6 24L18 9H24L12 24H6Z" fill="#dc2626"/>
+                                <path d="M16 24L26 12H30L20 24H16Z" fill="#2563eb"/>
+                                <circle cx="27" cy="9" r="2.5" fill="#dc2626"/>
+                            </svg>
+                        </div>
+                        <h4 class="partner-tile-name">JNE Express Logistics</h4>
+                        <span class="partner-tile-domain">Ekspedisi & Supply Chain</span>
+                    </div>
+                </div>
+
+                <!-- Cisco -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.2"/>
+                                <line x1="8" y1="18" x2="8" y2="24" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="12" y1="13" x2="12" y2="24" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="16" y1="9" x2="16" y2="24" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="20" y1="9" x2="20" y2="24" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="24" y1="13" x2="24" y2="24" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="28" y1="18" x2="28" y2="24" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="partner-tile-name">Cisco Academy</h4>
+                        <span class="partner-tile-domain">Sertifikasi Global CCNA</span>
+                    </div>
+                </div>
+
+                <!-- MikroTik -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+                                <path d="M8 10H14L18 16L22 10H28L21 20V26H15V20L8 10Z" fill="#b91c1c"/>
+                                <circle cx="18" cy="8" r="2" fill="#b91c1c"/>
+                            </svg>
+                        </div>
+                        <h4 class="partner-tile-name">MikroTik Academy</h4>
+                        <span class="partner-tile-domain">Routing MTCNA Global</span>
+                    </div>
+                </div>
+
+                <!-- Accurate -->
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="partner-tile-card">
+                        <div class="partner-tile-logo">
+                            <svg width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.2"/>
+                                <path d="M18 6L7 27H13L18 17L23 27H29L18 6Z" fill="#16a34a"/>
+                                <path d="M12 21H24" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="partner-tile-name">Accurate Partner</h4>
+                        <span class="partner-tile-domain">Sistem Akuntansi Industri</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Video Callout Box -->
-            <div class="text-center p-4 bg-white border rounded-4 shadow-sm mx-auto" style="max-width: 640px;">
-                <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                    <i class="bi bi-play-circle-fill text-danger fs-2"></i>
-                    <div class="text-start">
-                        <div class="fw-bold text-dark" style="font-size: 0.98rem;">Ingin Melihat Suasana Kampus Lebih Dekat?</div>
-                        <div class="text-secondary small">Tonton video profil resmi SMK Gema Cyber School beresolusi Full HD.</div>
+            <!-- Unified Stat Bar -->
+            <div class="mitra-unified-stats">
+                <div class="row g-0 align-items-center">
+                    <!-- Metric 1 -->
+                    <div class="col-md-4 mitra-stat-col">
+                        <div class="mitra-stat-inner">
+                            <span class="mitra-stat-pill pill-blue">Kemitraan DUDI</span>
+                            <div class="mitra-stat-digit digit-blue">50<span class="stat-plus">+</span></div>
+                            <h4 class="mitra-stat-label">Perusahaan Rekanan Aktif</h4>
+                            <p class="mitra-stat-sub">MoU resmi program magang industri & prioritas rekrutmen kerja lulusan</p>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-outline-danger btn-sm rounded-pill px-3 py-1 fw-bold" data-bs-toggle="modal" data-bs-target="#videoProfileModal">
-                        <i class="bi bi-play-fill me-1"></i> Putar Video
-                    </button>
+
+                    <!-- Metric 2 -->
+                    <div class="col-md-4 mitra-stat-col stat-col-border">
+                        <div class="mitra-stat-inner">
+                            <span class="mitra-stat-pill pill-green">Keterserapan BKK</span>
+                            <div class="mitra-stat-digit digit-green">88.4<span class="stat-percent">%</span></div>
+                            <h4 class="mitra-stat-label">Tingkat Penyerapan Kerja</h4>
+                            <p class="mitra-stat-sub">Lulusan langsung terserap bekerja dalam waktu kurang dari 3 bulan</p>
+                        </div>
+                    </div>
+
+                    <!-- Metric 3 -->
+                    <div class="col-md-4 mitra-stat-col">
+                        <div class="mitra-stat-inner">
+                            <span class="mitra-stat-pill pill-amber">Standardisasi Nasional</span>
+                            <div class="mitra-stat-digit digit-amber">100<span class="stat-percent">%</span></div>
+                            <h4 class="mitra-stat-label">Sertifikasi Kompetensi BNSP</h4>
+                            <p class="mitra-stat-sub">Lulusan teruji dan mengantongi sertifikat keahlian berstandar resmi</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================
-         SECTION 8: MITRA INDUSTRI & DUDI
+         SECTION: KISAH SUKSES & JEJAK KARIR ALUMNI
          ========================================== -->
-    <section class="home-section-padding">
+    <section class="home-section-padding alumni-section" id="alumni">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="section-badge-pill section-badge-primary">
-                    <i class="bi bi-link-45deg text-primary"></i> JEJARING KEMITRAAN
+                <span class="section-badge-pill section-badge-emerald">
+                    <i class="bi bi-mortarboard-fill text-success"></i> JEJAK KARIR ALUMNI
                 </span>
-                <h2 class="section-title-lg">Mitra Industri & Penyaluran Kerja</h2>
+                <h2 class="section-title-lg">Kisah Sukses Alumni di Dunia Industri</h2>
                 <p class="section-subtitle-text mx-auto">
-                    Bekerja sama erat dengan korporasi nasional dan lembaga sertifikasi ternama demi menjamin keterserapan kerja lulusan.
+                    Bukti nyata keterserapan kerja dan daya saing lulusan SMK Gema Cyber School di berbagai korporasi terkemuka dan BUMN nasional.
                 </p>
             </div>
 
-            <!-- 8 Partner Pills -->
-            <div class="row g-3 justify-content-center mb-5">
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-broadcast text-danger fs-4"></i>
-                            <span class="partner-name-text">PT Telkom Indonesia</span>
+            <div class="row g-4 mb-4">
+                <!-- Alumni 1: TJKT -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-2 py-1 small fw-bold">TJKT '22</span>
+                        </div>
+                        <i class="bi bi-quote alumni-quote-icon"></i>
+                        <p class="alumni-quote-text">
+                            "Kurikulum Cisco Academy dan praktikum hands-on di SMK Gema Cyber School memberikan keunggulan kompetitif saat seleksi kerja. Sebelum wisuda, saya sudah diterima melalui rekrutmen BKK sekolah."
+                        </p>
+                        <div class="alumni-profile mt-auto">
+                            <div class="alumni-avatar alumni-avatar-tjkt">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="alumni-name">Rizky Ramadhan, S.Kom</div>
+                                <div class="alumni-role">Cyber Security & Cloud Engineer</div>
+                                <div class="alumni-company"><i class="bi bi-building me-1"></i>PT Telkom Indonesia (Persero)</div>
+                            </div>
+                        </div>
+                        <div class="alumni-tags-row">
+                            <span class="alumni-tag-pill"><i class="bi bi-check2 text-primary"></i> CCNA Certified</span>
+                            <span class="alumni-tag-pill"><i class="bi bi-check2 text-primary"></i> Rekrutmen BKK</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-gear-wide-connected text-primary fs-4"></i>
-                            <span class="partner-name-text">PT Astra International</span>
+                <!-- Alumni 2: AKL -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-2 py-1 small fw-bold">AKL '23</span>
+                        </div>
+                        <i class="bi bi-quote alumni-quote-icon"></i>
+                        <p class="alumni-quote-text">
+                            "Sertifikasi Accurate V.5 dan simulasi Mini Banking di sekolah membuat adaptasi saya di dunia perbankan sangat cepat. Etika kerja dan kedisiplinan yang diajarkan terbukti sangat aplikatif."
+                        </p>
+                        <div class="alumni-profile mt-auto">
+                            <div class="alumni-avatar alumni-avatar-akl">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="alumni-name">Annisa Permata Putri</div>
+                                <div class="alumni-role">Junior Financial Analyst</div>
+                                <div class="alumni-company"><i class="bi bi-building me-1"></i>PT Bank Mandiri (Persero) Tbk</div>
+                            </div>
+                        </div>
+                        <div class="alumni-tags-row">
+                            <span class="alumni-tag-pill"><i class="bi bi-check2 text-success"></i> Accurate Certified</span>
+                            <span class="alumni-tag-pill"><i class="bi bi-check2 text-success"></i> Mini Bank Staff</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-bank2 text-warning fs-4"></i>
-                            <span class="partner-name-text">Bank Mandiri</span>
+                <!-- Alumni 3: Logistik -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="alumni-card">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span class="badge bg-purple-subtle text-purple border rounded-pill px-2 py-1 small fw-bold" style="background: #f3e8ff; color: #7c3aed; border-color: #ddd6fe !important;">Logistik '23</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-mailbox2 text-warning fs-4"></i>
-                            <span class="partner-name-text">PT Pos Indonesia</span>
+                        <i class="bi bi-quote alumni-quote-icon"></i>
+                        <p class="alumni-quote-text">
+                            "Metode Teaching Factory dan magang industri terarah dari BKK SMK Gema Cyber School membentuk mentalitas siap kerja. Saya langsung dipercaya memegang alur WMS digital di Astra."
+                        </p>
+                        <div class="alumni-profile mt-auto">
+                            <div class="alumni-avatar alumni-avatar-logistik">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="alumni-name">Fajar Bagus Wicaksono</div>
+                                <div class="alumni-role">Warehouse Operations Specialist</div>
+                                <div class="alumni-company"><i class="bi bi-building me-1"></i>PT Astra International Tbk</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-truck text-danger fs-4"></i>
-                            <span class="partner-name-text">JNE Express Logistics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-hdd-network text-info fs-4"></i>
-                            <span class="partner-name-text">Cisco Academy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-router text-success fs-4"></i>
-                            <span class="partner-name-text">MikroTik Academy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="partner-logo-pill">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-receipt-cutoff text-primary fs-4"></i>
-                            <span class="partner-name-text">Accurate Partner</span>
+                        <div class="alumni-tags-row">
+                            <span class="alumni-tag-pill"><i class="bi bi-check2 text-purple" style="color: #7c3aed;"></i> WMS Expert</span>
+                            <span class="alumni-tag-pill"><i class="bi bi-check2 text-purple" style="color: #7c3aed;"></i> Fast-Track BKK</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Stats Bar BKK -->
-            <div class="row g-3 text-center">
-                <div class="col-md-4">
-                    <div class="p-3 bg-light rounded-4 border">
-                        <div class="fw-bold text-primary mb-1" style="font-size: 1.8rem;">50+</div>
-                        <div class="text-secondary small fw-semibold">Perusahaan Rekanan Industri</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3 bg-light rounded-4 border">
-                        <div class="fw-bold text-success mb-1" style="font-size: 1.8rem;">88.4%</div>
-                        <div class="text-secondary small fw-semibold">Tingkat Penyerapan Kerja Lulusan</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3 bg-light rounded-4 border">
-                        <div class="fw-bold text-warning mb-1" style="font-size: 1.8rem;">100%</div>
-                        <div class="text-secondary small fw-semibold">Sertifikasi Kompetensi BNSP</div>
-                    </div>
-                </div>
+            <!-- Bottom Consultation Banner -->
+            <div class="text-center pt-2">
+                <p class="text-secondary small mb-2">Ingin berkonsultasi mengenai peminatan jurusan dan peluang karir industri?</p>
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin%20SMK%20Gema%20Cyber,%20saya%20ingin%20konsultasi%20jurusan%20dan%20prospek%20karir" target="_blank" class="btn btn-outline-primary rounded-pill px-4 py-2 small fw-bold">
+                    <i class="bi bi-whatsapp me-1 text-success"></i> Konsultasi Karir & Minat Jurusan via WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -1253,7 +1262,7 @@
     <!-- ==========================================
          SECTION 9: FAQ (TANYA JAWAB UMUM)
          ========================================== -->
-    <section class="home-section-padding home-section-bg-light" id="faq">
+    <section class="home-section-padding bg-white" id="faq">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="section-badge-pill section-badge-amber">
@@ -1272,7 +1281,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="bi bi-patch-check-fill text-primary me-2"></i> Apakah ijazah dan sertifikat SMK Gema Cyber School diakui secara nasional?
+                                    <span class="faq-q-badge">01</span> Apakah ijazah dan sertifikat SMK Gema Cyber School diakui secara nasional?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#schoolFaqAccordion">
@@ -1286,7 +1295,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="bi bi-briefcase-fill text-primary me-2"></i> Bagaimana peluang kerja lulusan dan bantuan penyaluran karir?
+                                    <span class="faq-q-badge">02</span> Bagaimana peluang kerja lulusan dan bantuan penyaluran karir?
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#schoolFaqAccordion">
@@ -1300,7 +1309,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="bi bi-gift-fill text-primary me-2"></i> Apakah tersedia beasiswa bagi siswa baru yang berprestasi?
+                                    <span class="faq-q-badge">03</span> Apakah tersedia beasiswa bagi siswa baru yang berprestasi?
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#schoolFaqAccordion">
@@ -1314,7 +1323,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <i class="bi bi-laptop-fill text-primary me-2"></i> Apakah siswa wajib memiliki laptop pribadi untuk praktikum?
+                                    <span class="faq-q-badge">04</span> Apakah siswa wajib memiliki laptop pribadi untuk praktikum?
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#schoolFaqAccordion">
@@ -1328,7 +1337,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFive">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    <i class="bi bi-file-earmark-text-fill text-primary me-2"></i> Bagaimana cara mendaftar dan apa saja berkas persyaratannya?
+                                    <span class="faq-q-badge">05</span> Bagaimana cara mendaftar dan apa saja berkas persyaratannya?
                                 </button>
                             </h2>
                             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#schoolFaqAccordion">
@@ -1429,12 +1438,135 @@
     </section>
 
     <!-- ==========================================
+         SECTION 4: INFORMASI & ALUR PPDB ONLINE
+         ========================================== -->
+    <section class="home-section-padding home-section-bg-light" id="ppdb">
+        <div class="container">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <span class="section-badge-pill section-badge-success">
+                    <i class="bi bi-mortarboard-fill text-success"></i> PENERIMAAN PESERTA DIDIK BARU (PPDB)
+                </span>
+                <h2 class="section-title-lg">PPDB Online T.A 2025/2026 Telah Dibuka!</h2>
+                <p class="section-subtitle-text mx-auto">
+                    Raih masa depan gemilang bersama SMK Gema Cyber School. Ikuti proses pendaftaran online yang praktis, cepat, dan transparan.
+                </p>
+            </div>
+
+            <!-- 4 Alur Langkah PPDB -->
+            <div class="row g-4 mb-5">
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ppdb-flow-card">
+                        <span class="ppdb-step-badge-tag">LANGKAH 01</span>
+                        <div class="ppdb-step-icon-wrap ppdb-icon-register">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="3" fill="#3b82f6" fill-opacity="0.2" stroke="#2563eb" stroke-width="2"/>
+                                <path d="M7 8H17M7 12H13M7 16H11" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="16" cy="15" r="3" fill="#2563eb"/>
+                                <path d="M15 15L15.8 15.8L17.5 14" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Registrasi Online</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                            Buka portal PPDB resmi, buat akun calon siswa baru, dan isi formulir biodata lengkap beserta pemilihan jurusan yang diminati.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ppdb-flow-card">
+                        <span class="ppdb-step-badge-tag">LANGKAH 02</span>
+                        <div class="ppdb-step-icon-wrap ppdb-icon-upload">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 15V18C18 19.1 17.1 20 16 20H8C6.9 20 6 19.1 6 18V15" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 4V14M12 4L8 8M12 4L16 8" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 14C3 13 2 11 3 9C4 7 6 6 8 6C9 4 12 3 14 5C16 4 19 5 19 8C21 8 22 10 22 12C22 14 20 16 18 16" fill="#10b981" fill-opacity="0.18"/>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Unggah Berkas</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                            Upload salinan rapor SMP/MTs, Kartu Keluarga (KK), Akta Kelahiran, dan pas foto terbaru secara digital melalui portal akun.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ppdb-flow-card">
+                        <span class="ppdb-step-badge-tag">LANGKAH 03</span>
+                        <div class="ppdb-step-icon-wrap ppdb-icon-interview">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 8H19C20.1 8 21 8.9 21 10V18L17 15H15" stroke="#d97706" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 14V6C15 4.9 14.1 4 13 4H5C3.9 4 3 4.9 3 6V16L7 14H13C14.1 14 15 14 15 14Z" fill="#f59e0b" fill-opacity="0.2" stroke="#d97706" stroke-width="2" stroke-linejoin="round"/>
+                                <circle cx="7" cy="9" r="1" fill="#d97706"/>
+                                <circle cx="9.5" cy="9" r="1" fill="#d97706"/>
+                                <circle cx="12" cy="9" r="1" fill="#d97706"/>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Tes Minat & Wawancara</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                            Mengikuti pemetaan bakat minat kejuruan dan sesi wawancara motivasi belajar bersama tim konselor guru profesional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ppdb-flow-card">
+                        <span class="ppdb-step-badge-tag">LANGKAH 04</span>
+                        <div class="ppdb-step-icon-wrap ppdb-icon-enroll">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L2 8L12 13L22 8L12 3Z" fill="#8b5cf6" fill-opacity="0.25" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M6 10.5V16C6 17.5 8.69 19 12 19C15.31 19 18 17.5 18 16V10.5" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="19" cy="19" r="4" fill="#10b981" stroke="white" stroke-width="1.5"/>
+                                <path d="M17.5 19L18.5 20L20.5 18" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold text-dark mb-2" style="font-size: 1.05rem;">Daftar Ulang</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.55;">
+                            Pengumuman hasil seleksi kelulusan, penyelesaian administrasi daftar ulang, dan penerimaan seragam serta jadwal MPLS.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner Call To Action PPDB -->
+            <div class="ppdb-cta-banner">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill small">GELOMBANG 1 DIBUKA</span>
+                            <span class="text-white-50 small">Potongan Biaya Pengembangan Pendidikan 50%</span>
+                        </div>
+                        <h3 class="fw-bold text-white mb-2" style="font-size: 1.6rem;">Siap Menjadi Bagian Generasi Digital Berprestasi?</h3>
+                        <p class="text-white-50 mb-0 small" style="max-width: 620px; line-height: 1.6;">
+                            Kuota kelas untuk masing-masing jurusan terbatas demi menjaga kualitas pembelajaran praktikum laboratorium. Segera amankan kursi Anda sekarang juga.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <div class="d-flex flex-column flex-sm-row flex-lg-column gap-2 justify-content-lg-end">
+                            <a href="https://wa.me/6281234567890?text=Halo%20Panitia%20PPDB%20SMK%20Gema%20Cyber,%20saya%20ingin%20mendaftar%20PPDB" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 shadow-sm">
+                                <i class="bi bi-mortarboard-fill me-1"></i> Daftar Sekarang via WA
+                            </a>
+                            <a href="#kontak" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">
+                                <i class="bi bi-info-circle me-1"></i> Panduan Syarat PPDB
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          FOOTER
          ========================================== -->
     <footer class="school-footer" id="footer">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-7">
                     <div class="mb-3">
                         <img src="{{ asset('images/school-logo-2x.png') }}" alt="SMK Gema Cyber School" style="height: 38px; filter: brightness(0) invert(1);" class="mb-2">
                     </div>
@@ -1448,29 +1580,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="footer-heading">Navigasi</h5>
-                    <ul class="list-unstyled small d-flex flex-column gap-2">
-                        <li><a href="{{ url('/') }}">Beranda</a></li>
-                        <li><a href="{{ route('profil.tentang') }}">Profil Sekolah</a></li>
-                        <li><a href="{{ route('profil.visi-misi') }}">Visi & Misi</a></li>
-                        <li><a href="{{ route('profil.struktur') }}">Struktur Organisasi</a></li>
-                        <li><a href="#ppdb">Pendaftaran PPDB</a></li>
-                        <li><a href="#kontak-langsung">Hubungi Kami</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-heading">Program Keahlian</h5>
-                    <ul class="list-unstyled small d-flex flex-column gap-2">
-                        <li><a href="#jurusan-tjkt">Teknik Jaringan Komputer (TJKT)</a></li>
-                        <li><a href="#jurusan-akl">Akuntansi & Keuangan (AKL)</a></li>
-                        <li><a href="#jurusan-mplb">Manajemen Perkantoran (MPLB)</a></li>
-                        <li><a href="#jurusan-logistik">Logistik</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-5 offset-lg-1 col-md-5">
                     <h5 class="footer-heading">Kontak Sekolah</h5>
                     <ul class="list-unstyled small d-flex flex-column gap-2 text-secondary">
                         <li class="d-flex gap-2">
@@ -1489,14 +1599,28 @@
                 </div>
             </div>
 
+                        <!-- Institutional Legal & Accreditation Bar -->
+            <div class="footer-legal-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                    <span class="footer-legal-pill"><i class="bi bi-shield-check text-warning"></i> NPSN: 69987214</span>
+                    <span class="footer-legal-pill"><i class="bi bi-patch-check-fill text-success"></i> Terakreditasi A BAN-SM</span>
+                    <span class="footer-legal-pill"><i class="bi bi-award text-info"></i> SK Pendirian: No. 421.3/908-Disdik</span>
+                </div>
+                <div class="text-secondary small">
+                    Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi RI
+                </div>
+            </div>
+
             <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
                 <div>
                     &copy; {{ date('Y') }} <strong>SMK Gema Cyber School</strong>. All rights reserved.
                 </div>
                 <div class="d-flex gap-3 mt-2 mt-md-0">
                     <a href="#">Kebijakan Privasi</a>
-                    <span>•</span>
+                    <span>&bull;</span>
                     <a href="#">Syarat & Ketentuan</a>
+                    <span>&bull;</span>
+                    <a href="{{ route('admin.dashboard') }}" class="text-primary fw-semibold"><i class="bi bi-shield-lock-fill me-1"></i>Portal Admin</a>
                 </div>
             </div>
         </div>
@@ -1524,15 +1648,17 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow-lg p-3">
                 <div class="modal-header border-0 pb-1">
-                    <h6 class="modal-title fw-bold">Pencarian Website</h6>
+                    <h6 class="modal-title fw-bold">Pencarian Berita & Website</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-2">
-                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
-                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Ketik pencarian...">
-                        <button class="btn btn-primary px-3 rounded-end" type="button">Cari</button>
-                    </div>
+                    <form action="{{ route('berita.index') }}" method="GET">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                            <input type="text" name="q" class="form-control border-start-0 ps-0" placeholder="Ketik kata kunci berita (misal: LKS, Telkom, BNSP)..." required>
+                            <button class="btn btn-primary px-3 rounded-end" type="submit">Cari</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1544,15 +1670,59 @@
     <!-- Sticky Navbar Script -->
     <script>
         window.addEventListener('scroll', function() {
+            const header = document.querySelector('.school-header');
             const navbar = document.querySelector('.school-navbar');
-            if (navbar) {
-                if (window.scrollY > 15) {
-                    navbar.classList.add('navbar-scrolled');
-                } else {
-                    navbar.classList.remove('navbar-scrolled');
-                }
+            if (window.scrollY > 20) {
+                if (header) header.classList.add('header-scrolled');
+                if (navbar) navbar.classList.add('navbar-scrolled');
+            } else {
+                if (header) header.classList.remove('header-scrolled');
+                if (navbar) navbar.classList.remove('navbar-scrolled');
             }
         });
+
+        const statNumbers = document.querySelectorAll('.stats-card-main .stat-number[data-count]');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (statNumbers.length && !reducedMotion && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function(entries, currentObserver) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    const element = entry.target;
+                    const target = Number(element.dataset.count);
+                    const suffix = element.dataset.suffix || '';
+                    const duration = 1400;
+                    let startTime;
+
+                    function updateCount(timestamp) {
+                        if (!startTime) {
+                            startTime = timestamp;
+                        }
+
+                        const progress = Math.min((timestamp - startTime) / duration, 1);
+                        const easedProgress = 1 - Math.pow(1 - progress, 3);
+                        element.textContent = Math.floor(target * easedProgress).toLocaleString('id-ID') + suffix;
+
+                        if (progress < 1) {
+                            window.requestAnimationFrame(updateCount);
+                        } else {
+                            element.textContent = target.toLocaleString('id-ID') + suffix;
+                        }
+                    }
+
+                    window.requestAnimationFrame(updateCount);
+                    currentObserver.unobserve(element);
+                });
+            }, { threshold: 0.4 });
+
+            statNumbers.forEach(function(element) {
+                element.textContent = '0' + (element.dataset.suffix || '');
+                observer.observe(element);
+            });
+        }
     </script>
 </body>
 </html>

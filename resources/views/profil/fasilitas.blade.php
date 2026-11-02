@@ -128,7 +128,7 @@
             border-radius: 8px;
             padding: 10px 12px;
             font-size: 0.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             margin-top: auto;
         }
 
@@ -154,26 +154,6 @@
             color: #111827;
             font-weight: 600;
             text-align: right;
-        }
-
-        .real-facility-footer {
-            border-top: 1px solid #f3f4f6;
-            padding-top: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.78rem;
-            color: #6b7280;
-        }
-
-        /* Box Informasi Kunjungan Kampus yang Sederhana & Formal */
-        .school-notice-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid var(--gema-primary);
-            border-radius: 12px;
-            padding: 1.5rem 1.75rem;
-            margin-top: 3.5rem;
         }
     </style>
 </head>
@@ -203,13 +183,14 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil <i class="bi bi-chevron-down nav-chevron"></i>
                         </a>
                         <ul class="dropdown-menu shadow-sm border-0 rounded-3">
                             <li><a class="dropdown-item py-2" href="{{ route('profil.tentang') }}"><i class="bi bi-building me-2 text-primary"></i>Profil Sekolah</a></li>
                             <li><a class="dropdown-item py-2" href="{{ route('profil.visi-misi') }}"><i class="bi bi-bullseye me-2 text-danger"></i>Visi & Misi</a></li>
                             <li><a class="dropdown-item py-2" href="{{ route('profil.struktur') }}"><i class="bi bi-diagram-3 me-2 text-success"></i>Struktur Organisasi</a></li>
+                            <li><a class="dropdown-item py-2 active" href="{{ route('profil.fasilitas') }}"><i class="bi bi-door-open me-2 text-info"></i>Fasilitas Sekolah</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -223,26 +204,18 @@
                             <li><a class="dropdown-item py-2" href="{{ route('beranda') }}#jurusan-logistik">Logistik</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('beranda') }}#ppdb">PPDB</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kegiatan <i class="bi bi-chevron-down nav-chevron"></i>
                         </a>
                         <ul class="dropdown-menu shadow-sm border-0 rounded-3">
-                            <li><a class="dropdown-item py-2" href="{{ route('beranda') }}#ekskul">Ekstrakurikuler</a></li>
-                            <li><a class="dropdown-item py-2" href="{{ route('beranda') }}#prestasi">Prestasi Siswa</a></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('ekstrakurikuler.index') }}"><i class="bi bi-stars me-2 text-warning"></i>Ekstrakurikuler</a></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('beranda') }}#prestasi"><i class="bi bi-trophy me-2 text-primary"></i>Prestasi Siswa</a></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('galeri.index') }}"><i class="bi bi-images me-2 text-success"></i>Galeri Kegiatan</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('beranda') }}#berita">Berita</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active fw-bold text-primary" href="{{ route('profil.fasilitas') }}">Fasilitas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('beranda') }}#galeri">Galeri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('beranda') }}#kontak">Kontak</a>
@@ -268,31 +241,13 @@
          ========================================== -->
     <header class="facility-simple-header">
         <div class="container">
-            <!-- Breadcrumbs Formal -->
-            <nav aria-label="breadcrumb" class="mb-2">
-                <ol class="breadcrumb small m-0 text-secondary">
-                    <li class="breadcrumb-item"><a href="{{ route('beranda') }}" class="text-decoration-none text-secondary">Beranda</a></li>
-                    <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Fasilitas Sekolah</li>
-                </ol>
-            </nav>
-
-            <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
-                <div>
-                    <h1 class="fw-bold text-dark mb-2" style="font-size: 1.85rem; letter-spacing: -0.3px;">
-                        Fasilitas Sekolah & Laboratorium Praktik
-                    </h1>
-                    <p class="text-secondary m-0" style="font-size: 0.95rem; max-width: 740px; line-height: 1.6;">
-                        SMK Gema Cyber School menyediakan sarana dan prasarana belajar yang lengkap guna mendukung kegiatan pembelajaran teori maupun praktikum kejuruan siswa di sekolah.
-                    </p>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-light text-secondary border px-3 py-2 rounded-2 small fw-semibold">
-                        <i class="bi bi-building-check text-primary me-1"></i> Gedung Milik Sendiri
-                    </span>
-                    <span class="badge bg-light text-secondary border px-3 py-2 rounded-2 small fw-semibold">
-                        <i class="bi bi-shield-check text-success me-1"></i> Terakreditasi A
-                    </span>
-                </div>
+            <div class="mb-4">
+                <h1 class="fw-bold text-dark mb-2" style="font-size: 1.85rem; letter-spacing: -0.3px;">
+                    Fasilitas Sekolah & Laboratorium Praktik
+                </h1>
+                <p class="text-secondary m-0" style="font-size: 0.95rem; max-width: 740px; line-height: 1.6;">
+                    SMK Gema Cyber School menyediakan sarana dan prasarana belajar yang lengkap guna mendukung kegiatan pembelajaran teori maupun praktikum kejuruan siswa di sekolah.
+                </p>
             </div>
 
             <!-- Filter Kategori Sederhana & Rapi -->
@@ -348,11 +303,6 @@
                                     <span class="facility-info-val">Siti Rahmawati, M.Kom</span>
                                 </div>
                             </div>
-
-                            <div class="real-facility-footer">
-                                <span><i class="bi bi-check-circle-fill text-success me-1"></i>Kondisi Prima</span>
-                                <span class="text-primary fw-semibold">Jadwal: KBM & Praktik</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -390,11 +340,6 @@
                                     <span class="facility-info-label">Kepala Lab</span>
                                     <span class="facility-info-val">Fajar Nugroho, S.Kom</span>
                                 </div>
-                            </div>
-
-                            <div class="real-facility-footer">
-                                <span><i class="bi bi-check-circle-fill text-success me-1"></i>Standar LSP / UKK</span>
-                                <span class="text-primary fw-semibold">Jurusan TJKT</span>
                             </div>
                         </div>
                     </div>
@@ -434,11 +379,6 @@
                                     <span class="facility-info-val">Nur Hidayah, S.E, M.Ak</span>
                                 </div>
                             </div>
-
-                            <div class="real-facility-footer">
-                                <span><i class="bi bi-check-circle-fill text-success me-1"></i>Pelayanan Kas Siswa</span>
-                                <span class="text-primary fw-semibold">Jurusan AKL</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -476,11 +416,6 @@
                                     <span class="facility-info-label">Kepala Lab</span>
                                     <span class="facility-info-val">Dimas Wahyu, S.Log</span>
                                 </div>
-                            </div>
-
-                            <div class="real-facility-footer">
-                                <span><i class="bi bi-check-circle-fill text-success me-1"></i>Simulasi Standar Industri</span>
-                                <span class="text-primary fw-semibold">Jurusan Logistik</span>
                             </div>
                         </div>
                     </div>
@@ -520,11 +455,6 @@
                                     <span class="facility-info-val">Waka Sarana Prasarana</span>
                                 </div>
                             </div>
-
-                            <div class="real-facility-footer">
-                                <span><i class="bi bi-check-circle-fill text-success me-1"></i>Bersih & Nyaman</span>
-                                <span class="text-primary fw-semibold">Semua Rombel</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -562,11 +492,6 @@
                                     <span class="facility-info-label">Kepala Perpustakaan</span>
                                     <span class="facility-info-val">Dewi Sartika, S.Sos</span>
                                 </div>
-                            </div>
-
-                            <div class="real-facility-footer">
-                                <span><i class="bi bi-clock-history me-1"></i>Senin - Jumat (07.30 - 15.00)</span>
-                                <span class="text-primary fw-semibold">Terbuka untuk Siswa</span>
                             </div>
                         </div>
                     </div>
@@ -630,25 +555,6 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                 INFORMASI KUNJUNGAN KAMPUS (FORMAL & RAPI)
-                 ========================================== -->
-            <div class="school-notice-box">
-                <div class="row align-items-center g-3">
-                    <div class="col-lg-8">
-                        <h5 class="fw-bold text-dark mb-1">Ingin Melihat Langsung Fasilitas SMK Gema Cyber School?</h5>
-                        <p class="text-secondary small mb-0" style="line-height: 1.6;">
-                            Calon peserta didik baru dan orang tua dipersilakan berkunjung ke kampus pada jam kerja sekolah (Senin - Jumat, pukul 08.00 - 15.00 WIB) untuk melihat ruang kelas, laboratorium, dan lingkungan belajar.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a href="https://wa.me/6281234567890?text=Halo%20SMK%20Gema%20Cyber%20School,%20saya%20ingin%20berkunjung%20melihat%20fasilitas%20sekolah" target="_blank" class="btn btn-primary rounded-pill px-4 py-2 small fw-bold">
-                            <i class="bi bi-whatsapp me-1"></i> Hubungi Tata Usaha (WA)
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
@@ -658,7 +564,7 @@
     <footer class="school-footer" id="kontak">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-7">
                     <div class="mb-3">
                         <img src="{{ asset('images/school-logo-2x.png') }}" alt="SMK Gema Cyber School" style="height: 38px; filter: brightness(0) invert(1);" class="mb-2">
                     </div>
@@ -672,29 +578,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="footer-heading">Navigasi</h5>
-                    <ul class="list-unstyled small d-flex flex-column gap-2">
-                        <li><a href="{{ route('beranda') }}">Beranda</a></li>
-                        <li><a href="{{ route('profil.tentang') }}">Profil Sekolah</a></li>
-                        <li><a href="{{ route('profil.visi-misi') }}">Visi & Misi</a></li>
-                        <li><a href="{{ route('profil.struktur') }}">Struktur Organisasi</a></li>
-                        <li><a href="{{ route('profil.fasilitas') }}">Fasilitas Kampus</a></li>
-                        <li><a href="{{ route('beranda') }}#ppdb">Pendaftaran PPDB</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-heading">Program Keahlian</h5>
-                    <ul class="list-unstyled small d-flex flex-column gap-2">
-                        <li><a href="{{ route('beranda') }}#jurusan-tjkt">Teknik Jaringan Komputer (TJKT)</a></li>
-                        <li><a href="{{ route('beranda') }}#jurusan-akl">Akuntansi & Keuangan (AKL)</a></li>
-                        <li><a href="{{ route('beranda') }}#jurusan-mplb">Manajemen Perkantoran (MPLB)</a></li>
-                        <li><a href="{{ route('beranda') }}#jurusan-logistik">Logistik</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-5 offset-lg-1 col-md-5">
                     <h5 class="footer-heading">Kontak Sekolah</h5>
                     <ul class="list-unstyled small d-flex flex-column gap-2 text-secondary">
                         <li class="d-flex gap-2">
